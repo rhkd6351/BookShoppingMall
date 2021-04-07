@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$s
+    <h1>
+      <a href="/myInfo">내 정보</a>
+    </h1>
   </body>
 </html>

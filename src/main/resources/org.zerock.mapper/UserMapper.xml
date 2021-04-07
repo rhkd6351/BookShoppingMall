@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.UserMapper">
+
+    <insert id="insert">
+        insert into USER(email, pw, gender, birth, address, platform, reg_date, type)
+        values (#{email}, #{pw}, #{gender}, #{birth}, #{address}, #{platform}, sysdate, #{type})
+    </insert>
+
+    <select id="read" resultType="org.zerock.domain.StudentVO">
+        select * from STUDENT where eamil = #{email}
+    </select>
+
+</mapper>
