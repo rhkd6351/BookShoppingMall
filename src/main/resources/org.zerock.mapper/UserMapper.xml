@@ -6,12 +6,12 @@
 <mapper namespace="org.zerock.mapper.UserMapper">
 
     <insert id="insert">
-        insert into USER(email, pw, gender, birth, address, platform, reg_date, type)
-        values (#{email}, #{pw}, #{gender}, #{birth}, #{address}, #{platform}, sysdate, #{type})
+        insert into user_tb(email, pw, gender, birth, phone, platform, reg_date, type)
+        values (#{email}, #{pw}, #{gender}, #{birth}, #{phone}, 'local', sysdate, 1)
     </insert>
 
-    <select id="read" resultType="org.zerock.domain.StudentVO">
-        select * from STUDENT where eamil = #{email}
+    <select id="read" resultType="org.zerock.domain.UserVO">
+        select * from user_tb where email = #{email}
     </select>
 
 </mapper>

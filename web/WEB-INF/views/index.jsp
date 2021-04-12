@@ -1,4 +1,4 @@
-<%--
+<%@ page import="org.zerock.domain.UserVO" %><%--
   Created by IntelliJ IDEA.
   User: im-yegwang
   Date: 2021/04/05
@@ -11,8 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-    <h1>
-      <a href="/myInfo">내 정보</a>
-    </h1>
+    <h1><%=((UserVO)session.getAttribute("user")).getEmail()%>님 반갑습니다</h1>
+    <a href="/user/logout"></a>
   </body>
 </html>

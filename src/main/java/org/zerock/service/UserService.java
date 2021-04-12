@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserService {
 
-    public UserVO get(String id);
+    public UserVO get(String email);
 
     public void insert(UserVO vo);
 }

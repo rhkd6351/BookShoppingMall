@@ -14,9 +14,9 @@ public class UserServiceImpl implements UserService{
     UserMapper mapper;
 
     @Override
-    public UserVO get(String id) {
+    public UserVO get(String email) {
         log.info("getting User...");
-        return mapper.read(id);
+        return mapper.read(email);
     }
 
     @Override

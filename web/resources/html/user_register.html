@@ -7,6 +7,65 @@
     <title>yekwang</title>
     <link rel="stylesheet" href="../css/register.css">
 </head>
+<script>
+    function valid_check(){
+        var email = document.getElementsByName("email");
+        var pw = document.getElementsByName("pw");
+        var gender = document.getElementsByName("gender");
+        var regDate = document.getElementsByName("regDate");
+        var phone = document.getElementsByName("phone")
+
+        var emailCheck = /^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/;
+        var pwCheck = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/;
+        var phoneCheck = /(\d{3}).*(\d{3}).*(\d{4})/;
+
+        
+
+        if(email[0].value == ""){
+            alert("email을 입력하세요");
+            email[0].focus();
+            return false;
+        }
+        if(pw[0].value == ""){
+            alert("비밀번호를 입력하세요")
+            pw[0].focus();
+            return false;
+        }
+        if(phone[0].value == ""){
+            alert("전화번호를 입력하세요")
+            phone[0].focus();
+            return false;
+        }
+        if(gender[0].value == ""){
+            alert("성별을 선택하세요")
+            gender[0].focus();
+            return false;
+        }
+        if(regDate[0].value == ""){
+            alert("생년월일을 입력하세요")
+            regDate[0].focus();
+            return false;
+        }
+
+        if(emailCheck.test(email[0].value) == false){
+            alert("이메일 형식이 올바르지 않습니다. \n ex) aabbcc@naver.com");
+            return false;
+        }
+
+        if(pwCheck.test(pw[0].value) == false){
+            alert("비밀번호 형식이 올바르지 않습니다. \n 6~20자의 영문 + 숫자 또는 특수문자가 포함되어야 합니다.");
+            return false;
+        }
+        if(phoneCheck.test(phone[0].value) == false){
+            alert("전화번호 형식이 올바르지 않습니다. \n ex) 010-1234-5678");
+            return false;
+        }
+        var regi_form = document.regi_form;
+        regi_form.submit();
+
+    }
+</script>
+
 <body>
     <div class="content">
         <div class="title">
@@ -14,21 +73,25 @@
         </div>
 
         <div class="register">
-            <form action="/login" method="post"><br/>
+            <form action="/register" method="post" name="regi_form"><br/>
                 <br><div class="regi-title">이메일</div>
-                <input name="email" type="text" placeholder="EMAIL" id="login-id"><br/>
-                <div class="regi-title">비밀번호</div>
-                <input name="pw"type="password" placeholder="PASSWORD" id="login-pw"><br/>
+                <input name="email" type="text" placeholder="abcd@domain.com" id="login-id"><br/>
+                <div class="regi-title">비밀번호 (6~20개의 영문 + 숫자 or 특수문자 조합)</div>
+                <input name="pw" type="password" placeholder="PASSWORD" id="login-pw"><br/>
+                <div class="regi-title">전화번호</div>
+                <input name="phone" type="text" placeholder="010-1234-5678" id="login-pw"><br/>
                 <div class="regi-title">성별</div>
                 <select name="gender">
+                    <option value="">선택</option>
                     <option value="male">남성</option>
                     <option value="female">여성</option>
                 </select>
                 <div class="regi-title">생년월일</div>
-                <input name="regDate"type="date" placeholder="생일" id="login-id"><br/>
+                <input name="birth" type="date" placeholder="생일" id="login-id"><br/>
                 
-                <button onclick="submit()" >가입하기</button>
+                
             </form>
+            <button onclick="valid_check()" >가입하기</button>
         </div>
         <div class="footer">
             rhkd6351@kyonggi.ac.kr <br/>

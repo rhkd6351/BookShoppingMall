@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
     <link rel="stylesheet" href="../css/login.css">
+    <script>
+        function login(){
+            var login_form = document.login_form;
+            login_form.submit();
+        }
+    </script>
 </head>
 <body>
     <div class="content">
@@ -14,11 +20,11 @@
         </div>
 
         <div class="login">
-            <form action="/login" method="post">            
+            <form action="/login" method="post" name="login_form">            
                 <input type="text" placeholder="EMAIL" id="login-id"><br/>
                 <input type="password" placeholder="PASSWORD" id="login-pw">
-                <button onclick="submit()" >로그인</button>
             </form>
+            <button onclick="login()" >로그인</button>
         </div>
 
         <nav>

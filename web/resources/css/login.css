@@ -35,14 +35,14 @@ html, body{
 form{
     width: 1000px;
 }
-form > input, form > button{
+form > input, button{
     width: 300px;
     height: 50px;
     border: 1px solid #707070;
     margin: 30px 169px -10px 169px;
     padding-left: 10px;
 }
-form > button{
+button{
     width: 312px;
     background-color: #8B0000;
     color: white;
