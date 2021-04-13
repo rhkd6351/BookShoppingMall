@@ -7,6 +7,32 @@
     <title>yekwang</title>
     <link rel="stylesheet" href="../css/register.css">
 </head>
+<script src="../js/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#login-id").on("change", function(){
+            $.ajax({
+                type: "get",
+                url: "/idValidCheck",
+                data: {
+                    "email" : $("#login-id").val()
+                },
+                dataType: "dataType",
+                success: function (response) {
+                    console.log(response);
+                    console.log(response.type);
+                    if(response == "true"){
+                        $("id-title").text = "이메일 !이미 존재하는 아이디입니다.";
+                        $("id-title").css("color", "red");
+                    }else{
+                        continue;
+                    }
+                }
+            });
+        })
+        
+        })
+</script>
 <script>
     function valid_check(){
         var email = document.getElementsByName("email");
@@ -74,7 +100,7 @@
 
         <div class="register">
             <form action="/register" method="post" name="regi_form"><br/>
-                <br><div class="regi-title">이메일</div>
+                <br><div class="regi-title" id="id-title">이메일</div>
                 <input name="email" type="text" placeholder="abcd@domain.com" id="login-id"><br/>
                 <div class="regi-title">비밀번호 (6~20개의 영문 + 숫자 or 특수문자 조합)</div>
                 <input name="pw" type="password" placeholder="PASSWORD" id="login-pw"><br/>

@@ -2,11 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script>
 
-    var loginValueCheck = ${loginTry};
+    var loginValueCheck = "${loginTry}";
 
-    if(loginValueCheck == false){
+    if(loginValueCheck == "false"){
         alert("아이디 혹은 비밀번호가 틀렸습니다.");
-        loginValueCheck = true;
     }
     function login(){
         var login_form = document.login_form;
