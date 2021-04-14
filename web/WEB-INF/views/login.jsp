@@ -5,7 +5,7 @@
     var loginValueCheck = "${loginTry}";
 
     if(loginValueCheck == "false"){
-        alert("아이디 혹은 비밀번호가 틀렸습니다.");
+        alert("${loginMsg}");
     }
     function login(){
         var login_form = document.login_form;
@@ -41,9 +41,9 @@
         <div>비밀번호 찾기</div>
     </nav>
     <div class="social-login">
-        <div class="social kakao">
+        <a href = "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=eedc76d38d9fb6483db97b48b0be11ee&redirect_uri=http://localhost:8080/user/login/kakao"><div class="social kakao">
             continue with <span>kakao</span>
-        </div>
+        </div></a>
         <div class="social facebook">
             continue with <span>facebook</span>
         </div>
