@@ -28,7 +28,7 @@ public class LoginController {
 
 
     @GetMapping("/login")
-    public String login(Model model, String loginTry, String loginMsg){
+    public String login(Model model, String loginTry, String loginMsg){ // send message to login page
         if(loginTry == null)
             return "/login";
         if(loginTry.equals("false")){
@@ -42,6 +42,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String pw, RedirectAttributes rttr){
+        log.info("second called");
         UserVO vo = userService.get(email);
         if(vo == null){ // 아이디 없음
             rttr.addFlashAttribute("loginTry","false");
@@ -66,18 +67,25 @@ public class LoginController {
     }
 
     @RequestMapping("/login/kakao")
-    public String getKakaoLogin(@RequestParam(value = "code", required = false) String code){
+    public String getKakaoLogin(@RequestParam(value = "code", required = false) String code,
+                                RedirectAttributes rttr){
         HashMap<String,String> userProperty = kakaoService.getProperty(kakaoService.getAccessCode(code));
-        log.info(userProperty.get("email"));
+        //인가코드를 사용하여 액세스 코드 요청, 이후 액세스 코드를 이용하여 프로퍼티 요청 이후 gson으로 파싱작업
 
         UserVO vo = userService.get(userProperty.get("email"));
-        if(vo == null){
+        if(vo == null){ // 계정이 없으면 생성
             vo = new UserVO();
             vo.setEmail(userProperty.get("email"));
             vo.setBirth(userProperty.get("birth"));
             vo.setGender(userProperty.get("gender"));
             vo.setPlatform("kakao");
-            userService.insert(vo);
+            userService.kakaoInsert(vo);
+        }
+
+        if(!vo.getPlatform().equals("kakao")){ // 카카오계정이 이미 로컬계정으로 존재하는경우
+            rttr.addFlashAttribute("loginTry","false");
+            rttr.addFlashAttribute("loginMsg","이미 존재하는 이메일로 가입된 계정이 있습니다.");
+            return "redirect:/user/login";
         }
         vo = userService.get(userProperty.get("email"));
 
@@ -87,7 +95,7 @@ public class LoginController {
 
 
     @GetMapping("/register")
-    public String register(){
+    public String localRegister(){
         return "/register";
     }
 

@@ -12,6 +12,6 @@
   </head>
   <body>
     <h1><%=((UserVO)session.getAttribute("user")).getEmail()%>님 반갑습니다</h1>
-    <a href="/user/logout"></a>
+    <a href="/user/logout">로그아웃</a>
   </body>
 </html>

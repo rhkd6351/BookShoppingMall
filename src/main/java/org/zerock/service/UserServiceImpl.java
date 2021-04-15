@@ -25,4 +25,10 @@ public class UserServiceImpl implements UserService{
         mapper.insert(vo);
     }
 
+    @Override
+    public void kakaoInsert(UserVO vo) {
+        log.info("inserting kakao User...");
+        mapper.kakaoInsert(vo);
+    }
+
 }

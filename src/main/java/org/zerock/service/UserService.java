@@ -10,4 +10,6 @@ public interface UserService {
     public UserVO get(String email);
 
     public void insert(UserVO vo);
+
+    public void kakaoInsert(UserVO vo);
 }

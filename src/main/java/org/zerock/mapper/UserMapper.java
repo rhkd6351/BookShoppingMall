@@ -8,4 +8,6 @@ public interface UserMapper {
     public UserVO read(String email);
 
     public void insert(UserVO vo);
+
+    public void kakaoInsert(UserVO vo);
 }

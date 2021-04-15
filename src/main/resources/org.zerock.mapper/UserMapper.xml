@@ -10,6 +10,11 @@
         values (#{email}, #{pw}, #{gender}, #{birth}, #{phone}, 'local', sysdate, 1)
     </insert>
 
+    <insert id="kakaoInsert">
+        insert into user_tb(email, gender, birth, platform, reg_date, type)
+        values (#{email}, #{gender}, #{birth}, 'kakao', sysdate, 1)
+    </insert>
+
     <select id="read" resultType="org.zerock.domain.UserVO">
         select * from user_tb where email = #{email}
     </select>
