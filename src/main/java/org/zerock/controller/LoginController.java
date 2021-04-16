@@ -6,12 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.zerock.domain.TokenVO;
 import org.zerock.domain.UserVO;
 import org.zerock.service.KakaoService;
+import org.zerock.service.TokenService;
 import org.zerock.service.UserService;
 import sun.misc.Request;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +29,7 @@ public class LoginController {
     UserService userService;
     HttpSession session;
     KakaoService kakaoService;
+    TokenService tokenService;
 
 
     @GetMapping("/login")
@@ -68,9 +73,44 @@ public class LoginController {
 
     @RequestMapping("/login/kakao")
     public String getKakaoLogin(@RequestParam(value = "code", required = false) String code,
-                                RedirectAttributes rttr){
-        HashMap<String,String> userProperty = kakaoService.getProperty(kakaoService.getAccessCode(code));
-        //인가코드를 사용하여 액세스 코드 요청, 이후 액세스 코드를 이용하여 프로퍼티 요청 이후 gson으로 파싱작업
+                                RedirectAttributes rttr,
+                                HttpServletRequest request,
+                                HttpServletResponse response){
+
+        HashMap<String, String> tokenMap = null;
+        HashMap<String,String> userProperty = null;
+        TokenVO refreshToken = null;
+        String accessToken = null;
+
+        //쿠키에 refresh 코드가 있다면 refresh code로 access코드 요청
+        Cookie[] cookies = request.getCookies();
+        for(Cookie cookie : cookies){
+            if("refresh".equals(cookie.getName())){
+                log.info(cookie.getName());
+                log.info(cookie.getValue());
+                refreshToken = tokenService.get(Integer.parseInt(cookie.getValue()));
+                //TODO 토큰 유효기간 확인 넣어야함
+                accessToken = kakaoService.getAccessCode(refreshToken);
+            }
+        }
+
+        //refresh 토큰이 없는경우 authorization code로 토큰 요청
+        if(accessToken == null){
+            tokenMap = kakaoService.getAccessCode(code);
+            accessToken = tokenMap.get("accessToken");
+
+            //쿠키에 refresh cookie index 추가
+            refreshToken = new TokenVO();
+            refreshToken.setRefreshToken(tokenMap.get("refreshToken"));
+            refreshToken.setRefreshDuration(tokenMap.get("refreshTokenExpiresIn"));
+            tokenService.insertSelectKey(refreshToken);
+
+            Cookie refreshCookie = new Cookie("refresh",Integer.toString(refreshToken.getOid()));
+            response.addCookie(refreshCookie);
+        }
+
+        //property 요청
+        userProperty = kakaoService.getProperty(accessToken);
 
         UserVO vo = userService.get(userProperty.get("email"));
         if(vo == null){ // 계정이 없으면 생성

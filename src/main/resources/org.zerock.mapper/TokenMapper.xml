@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.TokenMapper">
+
+    <insert id="insert">
+        insert into token_tb(oid, refresh_token, refresh_duration, reg_date)
+        values (token_seq.nextval, #{refreshToken}, #{refreshDuration}, sysdate)
+    </insert>
+
+    <insert id="insertSelectKey">
+        <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
+            select token_seq.nextval from dual
+        </selectKey>
+        insert into token_tb(oid, refresh_token, refresh_duration, reg_date)
+        values (#{oid}, #{refreshToken}, #{refreshDuration}, sysdate)
+    </insert>
+
+    <select id="read" resultType="org.zerock.domain.TokenVO">
+        select * from token_tb where oid = #{oid}
+    </select>
+
+</mapper>
