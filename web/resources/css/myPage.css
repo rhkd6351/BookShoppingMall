@@ -1,0 +1,236 @@
+/*Initialize_1*/
+* {
+    margin: 0px; padding: 0px;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+li {
+    list-style: none;
+}
+html, body{
+    height: 100%;
+    min-height: 700px;
+}
+/* header */
+header{
+    border-bottom: 2px solid #74534b;
+}
+nav{
+    width: 100%;
+    background-color: #74534b;
+    height: 35px;
+}
+nav > ul{
+    width: 960px;
+    margin: 0 auto;
+}
+nav li{
+    color: white;
+    width: 70px;
+
+    line-height: 35px;
+    font-weight: 400;
+    text-align: center;
+}
+.nav-aside-right > li{
+    width: 50px;
+    float:right;
+    font-size: 12px;
+}
+.nav-aside-left > li{
+    float:left;
+    font-size: 14px;
+}
+
+.bookSearch{
+    width: 960px;
+    margin: 40px auto 20px auto;
+    height: 100px;
+}
+.bookSearch-aside-left{
+    float: left;
+    width: 140px;
+    height: 110px;
+}
+#logo-image{
+    width: 140px;
+    height: 103px;
+    object-fit: cover;
+}
+#event-image{
+    width: 165px;
+    height: 103px;
+    object-fit: cover;
+    
+}
+
+.bookSearch-aside-center{
+    float: left;
+    height: 110px;
+    line-height: 80px;
+    margin-left: 20px;
+}
+#search-form{
+    margin-top: 30px;
+    line-height: 30px;
+    border: 2px solid #74534b;
+    height: 30px;
+    padding: 5px;
+}
+#search-form > select,
+#search-form > input{
+    border: none;
+    height: 30px;
+    background-color: white;
+}
+#search-form > input[type='text']{
+    width: 500px;
+    
+}
+
+.bookSearch-aside-right{
+    float: right;
+    line-height: 103px;
+    height: 103px;
+}
+
+/* main contents*/
+.content{
+    min-height: 700px;
+}
+.content-aside-center{
+    margin: 0 auto;
+    width: 960px;
+    min-height: 700px;
+    
+}
+.content-top{
+    width: 100%;
+    height: 130px;
+    background-color: #74534b;
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.content-top-element{
+    text-align: center;
+    float: left;
+    width: 192px;
+    height: 130px;
+    
+    
+}
+.content-top-element:nth-child(2){
+    width: 384px;
+}
+.content-top-element:nth-child(2) ~ .content-top-element{
+    width: 128px;
+    padding-top: 30px;
+    text-align: left;
+    height: 100px;
+
+}
+
+#profile-image{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+}
+
+#user-email{
+    padding-top: 30px;
+    font-size: 36px;
+    text-align: left;
+}
+#user-regDate{
+    text-align: left;
+    font-weight: 100;
+}
+
+.content-top-element:nth-child(2) ~ .content-top-element
+> div{
+    font-size: 30px;
+    padding-top: 5px;
+    text-decoration: underline;
+}
+
+.content-menu{
+    margin-top: 10px;
+    border: 2px solid #74534b;
+    border-radius: 10px;
+    float: left;
+    width: 90px;
+    padding-left: 30px;
+    box-shadow: 0px 0px 3px #74534b;
+}
+.menu-floor{
+    margin: 30px 0 30px 0;
+}
+.menu-floor li{
+    font-size: 16px;
+    color: #424242;
+    margin: 10px 0 10px -10px;
+    overflow: hidden;
+}
+
+.content-main{
+    float: left;
+    width: 822px;
+    margin: 10px 0 10px 10px;
+    border: 2px solid #74534b;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #74534b;
+    min-height: 500px;
+}
+.content-main-title{
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #74534b;
+    
+}
+.myInfo-content{
+    width: 822px;
+    height: 75px;
+    border-bottom: 1px solid grey;
+}
+.myInfo-content div{
+    float: left;
+    
+}
+.myInfo-content-title{
+    width: 100px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: bold;
+}
+.myInfo-content-content{
+    width: 472px;
+    padding-left: 50px;
+    line-height: 75px;
+}
+.myInfo-content > button{
+    border: 1px solid rgb(177, 175, 175);
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 22.5px;
+}
+
+
+/*footer*/
+footer{
+    height: 100px;
+    background-color: #dfdfdf;
+    text-align: center;
+    padding-top: 30px;
+}
+.footer-wrapper{
+    width: 802px;
+    margin: 0 auto;
+    color: #575757;
+}
+
+
