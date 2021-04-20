@@ -47,7 +47,7 @@
     <div class="register">
         <form action="/user/register" method="post" name="regi_form"><br/>
             <br><div class="regi-title" id="id-title">이메일</div>
-            <input name="email" type="text" placeholder="abcd@domain.com" id="login-id"><br/>
+            <input name="email" type="email" placeholder="abcd@domain.com" id="login-id"><br/>
             <div class="regi-title">비밀번호 (6~20개의 영문 + 숫자 or 특수문자 조합)</div>
             <input name="pw" type="password" placeholder="PASSWORD" id="login-pw"><br/>
             <div class="regi-title">전화번호</div>

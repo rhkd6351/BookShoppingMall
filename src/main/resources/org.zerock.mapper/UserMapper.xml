@@ -19,4 +19,25 @@
         select * from user_tb where email = #{email}
     </select>
 
+    <update id="updatePw">
+        update user_tb
+        set pw = #{pw}
+        where email = #{email}
+    </update>
+    <update id="updatePhone">
+        update user_tb
+        set phone = #{phone}
+        where email = #{email}
+    </update>
+    <update id="updateGender">
+        update user_tb
+        set gender = #{gender}
+        where email = #{email}
+    </update>
+    <update id="updateBirth">
+        update user_tb
+        set birth = #{birth}
+        where email = #{email}
+    </update>
+
 </mapper>

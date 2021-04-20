@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../css/myPage.css">
+    <link rel="stylesheet" href="../css/pwCert.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -116,67 +116,21 @@
                     <div class="content-main-title">
                         비밀번호 변경
                     </div>
-                    <div class="content-main-content">
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                사진
-                            </div>
-                            <div class="myInfo-content-content">
-                                기본이미지 
-                            </div>
-                            <button>사진 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                이름 
-                            </div>
-                            <div class="myInfo-content-content">
-                                임예광
-                            </div>
-                            <button>이름 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                비밀번호
-                            </div>
-                            <div class="myInfo-content-content">
-                                **********
-                            </div>
-                            <button>비밀번호 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                전화번호
-                            </div>
-                            <div class="myInfo-content-content">
-                                010-1234-****
-                            </div>
-                            <button>전화번호 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                성별
-                            </div>
-                            <div class="myInfo-content-content">
-                                남성
-                            </div>
-                            <button>성별 변경</button>
-                        </div>
-                        <div class="myInfo-content"
-                        style="border-bottom: none;">
-                            <div class="myInfo-content-title">
-                                생년월일
-                            </div>
-                            <div class="myInfo-content-content">
-                                1998 / 07 / 10
-                            </div>
-                            <button>생년월일 변경</button>
-                        </div>
+                    <div class="content-main-content"> 
+                        <form action="/user/pwCert" method="POST">
+                        &nbsp; 본인인증을 위해 현재 비밀번호를 입력해주세요 <br/><br/>
+                        <input type="password">
+                        <input type="submit" value="확인" name="" id="">
+                        </form>
                     </div>
                 </div>
                 
             </section>
-            
+            <!--
+            <section class="content-aside-right">
+                right-slide
+            </section>
+            -->
         </div>
 
         <footer>

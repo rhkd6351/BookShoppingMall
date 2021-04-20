@@ -24,7 +24,7 @@ import java.util.Map;
 @AllArgsConstructor
 @Log4j
 @RequestMapping("/user")
-public class LoginController {
+public class UserController {
 
     UserService userService;
     HttpSession session;
@@ -61,7 +61,7 @@ public class LoginController {
             }else{ //로그인 성공
                 session.setAttribute("user", vo);
                 rttr.addFlashAttribute("loginTry","true");
-                return "/index";
+                return "redirect:/user/myPage";
             }
         }
     }
@@ -130,7 +130,7 @@ public class LoginController {
         vo = userService.get(userProperty.get("email"));
 
         session.setAttribute("user",vo);
-        return "/index";
+        return "redirect:/user/myPage";
     }
 
 
@@ -160,4 +160,81 @@ public class LoginController {
             return "false";
         }
     }
+
+    @GetMapping("/myPage")
+    public String login(Model model){
+        //로그인 확인처리는 intercepture 에서 진행
+        UserVO vo = (UserVO) session.getAttribute("user");
+        model.addAttribute("user", vo);
+        return "/myPage";
+    }
+
+    @GetMapping("/changePw")
+    public String changePw(){
+        return "/user_manage/pwCert";
+    }
+    @GetMapping("/changeBirth")
+    public String changeBirth(){
+        return "/user_manage/birthChange";
+    }
+    @GetMapping("/changeGender")
+    public String changeGender(){
+        return "/user_manage/genderChange";
+    }
+    @GetMapping("/changePhone")
+    public String changePhone(){
+        return "/user_manage/phoneChange";
+    }
+
+    @PostMapping("/pwCert")
+    public String pwCert(@RequestParam String pw, Model model){
+        UserVO vo = (UserVO) session.getAttribute("user");
+        if(pw.equals(vo.getPw())){
+            return "/user_manage/pwChange";
+        }else{
+            model.addAttribute("certify", "false");
+            return "/user_manage/pwCert";
+        }
+    }
+    @ResponseBody
+    @PostMapping("/pwChange")
+    public String pwChange(@RequestParam String pw){
+        String[] pwList = pw.split(",");
+        UserVO vo = (UserVO) session.getAttribute("user");
+        vo.setPw(pw);
+        session.setAttribute("user",vo);
+        userService.updatePw(pwList[0], vo.getEmail());
+        return "<script>alert('change success'); location.href='/user/myPage';</script>";
+    }
+
+    @ResponseBody
+    @PostMapping("/genderChange")
+    public String genderChange(@RequestParam String gender){
+        UserVO vo = (UserVO) session.getAttribute("user");
+        userService.updateGender(gender, vo.getEmail());
+        vo.setGender(gender);
+        session.setAttribute("user",vo);
+        return "<script>alert('change success'); location.href='/user/myPage';</script>";
+    }
+
+    @ResponseBody
+    @PostMapping("/birthChange")
+    public String birthChange(@RequestParam String birth){
+        UserVO vo = (UserVO) session.getAttribute("user");
+        userService.updateBirth(birth, vo.getEmail());
+        vo.setBirth(birth);
+        session.setAttribute("user",vo);
+        return "<script>alert('change success'); location.href='/user/myPage';</script>";
+    }
+
+    @ResponseBody
+    @PostMapping("/phoneChange")
+    public String phoneChange(@RequestParam String phone){
+        UserVO vo = (UserVO) session.getAttribute("user");
+        userService.updatePhone(phone, vo.getEmail());
+        vo.setPhone(phone);
+        session.setAttribute("user",vo);
+        return "<script>alert('change success'); location.href='/user/myPage';</script>";
+    }
+
 }

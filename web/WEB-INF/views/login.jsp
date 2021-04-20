@@ -19,12 +19,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../../resources/css/login.css?version=1">
+    <link rel="stylesheet" href="../../resources/css/login.css?version=4">
 </head>
 <body>
 <div class="content">
     <div class="title">
-        BOOK <span style="color: #707070;">SHOPPING</span> MALL
+        <br/>
+        BOOK <span style="color: #49312a;">SHOPPING</span> MALL
     </div>
 
     <div class="login">
@@ -49,11 +50,11 @@
         </div>
     </div>
 
-    <div class="footer">
-        rhkd6351@kyonggi.ac.kr <br/>
-    </div>
+<%--    <div class="footer">--%>
+<%--        rhkd6351@kyonggi.ac.kr <br/>--%>
+<%--    </div>--%>
 </div>
-
+<jsp:include page="footer.jsp"/>
 
 
 

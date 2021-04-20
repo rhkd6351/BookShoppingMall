@@ -51,6 +51,7 @@ form > input, button{
 }
 button{
     width: 312px;
+    padding: 0px;
     background-color: #49010f;
     border: 1px solid #e9543300;
     color: white;
@@ -93,12 +94,17 @@ nav > div:nth-child(1), nav > div:nth-child(2){
     background-color: #4081EC;
 }
 
-.footer{
-    line-height: 100px;
+/*footer*/
+footer{
     height: 100px;
+    background-color: #dfdfdf;
     text-align: center;
-    color: black;
-    background-color: rgba(128, 128, 128, 0.24);
+    padding-top: 30px;
+}
+.footer-wrapper{
+    width: 802px;
+    margin: 0 auto;
+    color: #575757;
 }
 
 

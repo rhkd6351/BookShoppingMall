@@ -5,7 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../css/myPage.css">
+    <link rel="stylesheet" href="../css/pwCert.css">
+    <script>
+        var phoneCheck = /(\d{3}).*(\d{3}).*(\d{4})/;
+        var phone = document.getElementsByName("phone");
+
+        function changePhone(){
+            if(phoneCheck.test(phone[0].value) == false){
+                alert("전화번호 형식이 올바르지 않습니다. \n ex) 010-1234-5678");
+                return false;
+            }
+            var form = document.phoneForm;
+            form.submit();
+        }
+        
+    </script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -114,69 +128,18 @@
                 </div>
                 <div class="content-main">
                     <div class="content-main-title">
-                        비밀번호 변경
+                        전화번호 변경
                     </div>
-                    <div class="content-main-content">
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                사진
-                            </div>
-                            <div class="myInfo-content-content">
-                                기본이미지 
-                            </div>
-                            <button>사진 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                이름 
-                            </div>
-                            <div class="myInfo-content-content">
-                                임예광
-                            </div>
-                            <button>이름 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                비밀번호
-                            </div>
-                            <div class="myInfo-content-content">
-                                **********
-                            </div>
-                            <button>비밀번호 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                전화번호
-                            </div>
-                            <div class="myInfo-content-content">
-                                010-1234-****
-                            </div>
-                            <button>전화번호 변경</button>
-                        </div>
-                        <div class="myInfo-content">
-                            <div class="myInfo-content-title">
-                                성별
-                            </div>
-                            <div class="myInfo-content-content">
-                                남성
-                            </div>
-                            <button>성별 변경</button>
-                        </div>
-                        <div class="myInfo-content"
-                        style="border-bottom: none;">
-                            <div class="myInfo-content-title">
-                                생년월일
-                            </div>
-                            <div class="myInfo-content-content">
-                                1998 / 07 / 10
-                            </div>
-                            <button>생년월일 변경</button>
-                        </div>
+                    <div class="content-main-content"> 
+                        <form action="/user/phoneChange" method="POST" name = "phoneForm">
+                        전화번호
+                        <input type="text" name = "phone">
+                        <input type="button" value="변경" onclick="changePhone()">
+                        </form>
                     </div>
                 </div>
                 
             </section>
-            
         </div>
 
         <footer>

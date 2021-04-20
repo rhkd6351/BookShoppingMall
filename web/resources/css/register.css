@@ -11,7 +11,7 @@ li {
 }
 
 html, body{
-    background-color: #E2E2E2;
+    background-color: #74534b;
     height: 100%;
     min-height: 700px;
 }
@@ -48,7 +48,7 @@ select{
 }
 button{
     width: 312px;
-    background-color: #8B0000;
+    background-color: #49010f;
     color: white;
     font-size: 1.5em;
     font-weight: 100;

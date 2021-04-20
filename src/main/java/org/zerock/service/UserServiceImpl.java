@@ -31,4 +31,28 @@ public class UserServiceImpl implements UserService{
         mapper.kakaoInsert(vo);
     }
 
+    @Override
+    public void updatePw(String pw, String email) {
+        log.info("updating pw...");
+        mapper.updatePw(pw, email);
+    }
+
+    @Override
+    public void updatePhone(String phone, String email) {
+        log.info("updating phone...");
+        mapper.updatePhone(phone, email);
+    }
+
+    @Override
+    public void updateGender(String gender, String email) {
+        log.info("updating gender...");
+        mapper.updateGender(gender, email);
+    }
+
+    @Override
+    public void updateBirth(String birth, String email) {
+        log.info("updating birth...");
+        mapper.updateBirth(birth, email);
+    }
+
 }
