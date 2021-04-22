@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.ImageMapper">
+
+    <insert id="insertPubImage">
+        insert into image_pub_tb(oid, name, path, type, file_size, image_list_oid, pub_oid)
+        values (image_seq.nextval, #{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{pubOid})
+    </insert>
+
+    <insert id="insertProductImage">
+        insert into image_product_tb(oid, name, path, type, file_size, image_list_oid, product_oid)
+        values (image_seq.nextval, #{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{productOid})
+    </insert>
+
+</mapper>

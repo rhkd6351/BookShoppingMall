@@ -18,7 +18,7 @@
 
         <div class="bookSearch">
             <div class="bookSearch-aside-left">
-                <img src="../../resources/img/logo_search.png" alt="" id="logo-image">
+                <a href="/user/myPage"><img src="../../resources/img/logo_search.png" alt="" id="logo-image"></a>
             </div>
             <div class="bookSearch-aside-center">
                 <form action="#" id="search-form">

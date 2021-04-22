@@ -10,5 +10,4 @@ public class ImageVO {
    private String type;
    private int fileSize;
    private int imageListOid; //FK
-   private int productOid; //FK
 }

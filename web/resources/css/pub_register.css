@@ -158,7 +158,7 @@ nav li{
 }
 
 .content-menu{
-    margin-top: 3px;
+    margin-top: 10px;
     border: 2px solid #74534b;
     border-radius: 10px;
     float: left;
@@ -183,7 +183,7 @@ nav li{
     border: 2px solid #74534b;
     border-radius: 10px;
     box-shadow: 0px 0px 3px #74534b;
-    min-height: 200px;
+    min-height: 350px;
 }
 .content-main-title{
     padding: 20px;
@@ -192,26 +192,61 @@ nav li{
     border-bottom: 2px solid #74534b;
     
 }
-.content-main-content{
-    padding: 20px;
-    margin-top: 20px;  
+.myInfo-content{
+    width: 822px;
+    height: 75px;
+    border-bottom: 1px solid grey;
 }
-.content-main-content > form > input[type="password"],
-.content-main-content > form > input[type="text"]{
+.myInfo-content div{
+    float: left;
     
-    margin: 0 10px;
-    left: 100px;
 }
-.content-main-content input[type="submit"],
-.content-main-content input[type="button"]{
-    background-color: #74534b;
-    color: white;
+.myInfo-content-title{
+    width: 100px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: bold;
+}
+.myInfo-content-content{
+    width: 472px;
+    padding-left: 50px;
+    line-height: 75px;
+}
+.myInfo-content img{
+    margin-top: 12.5px;
+    margin-left: 30px;
+    position: absolute;
+}
+.myInfo-content textarea{
+    width: 400px;
+    height: 150px;
+    resize: none;
+    margin-top: 12.5px;
+}
+.myInfo-content input[type="file"]{
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    margin-top: 22.5px;
+    margin-left: -50px;
+}
+.form-button{
+    border: 1px solid rgb(177, 175, 175);
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 22.5px;
+}
+.myInfo-content:nth-child(3){
+    height: 180px;
     border: none;
-    width: 50px;
-    height: 20px;
-    border-radius: 10px;
 }
-
+.final{
+    position: absolute;
+    text-align: center;
+    right: 340px;
+    bottom: 35px;
+}
 
 
 /*footer*/

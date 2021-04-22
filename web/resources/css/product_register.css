@@ -99,12 +99,12 @@ nav li{
 /* main contents*/
 .content{
     min-height: 700px;
+    overflow: hidden;
 }
 .content-aside-center{
     margin: 0 auto;
     width: 960px;
     min-height: 700px;
-    
 }
 .content-top{
     width: 100%;
@@ -158,7 +158,7 @@ nav li{
 }
 
 .content-menu{
-    margin-top: 3px;
+    margin-top: 10px;
     border: 2px solid #74534b;
     border-radius: 10px;
     float: left;
@@ -183,7 +183,7 @@ nav li{
     border: 2px solid #74534b;
     border-radius: 10px;
     box-shadow: 0px 0px 3px #74534b;
-    min-height: 200px;
+    min-height: 350px;
 }
 .content-main-title{
     padding: 20px;
@@ -192,26 +192,65 @@ nav li{
     border-bottom: 2px solid #74534b;
     
 }
-.content-main-content{
-    padding: 20px;
-    margin-top: 20px;  
+.myInfo-content{
+    width: 822px;
+    height: 75px;
+    border-bottom: 1px solid grey;
 }
-.content-main-content > form > input[type="password"],
-.content-main-content > form > input[type="text"]{
+.myInfo-content div{
+    float: left;
     
-    margin: 0 10px;
-    left: 100px;
 }
-.content-main-content input[type="submit"],
-.content-main-content input[type="button"]{
-    background-color: #74534b;
-    color: white;
-    border: none;
-    width: 50px;
-    height: 20px;
-    border-radius: 10px;
+.myInfo-content-title{
+    width: 100px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: bold;
+}
+.myInfo-content-content{
+    width: 600px;
+    
+    padding-left: 50px;
+    line-height: 75px;
+    overflow: hidden;
 }
 
+#title{
+    font-size: 24px;
+    height: 30px;
+    width: 500px;
+}
+
+#subTitle{
+    color: grey;
+    font-size: 16px;
+    height: 30px;
+    width: 500px;
+}
+#author{
+    margin-right: 24px;
+}
+.myInfo-content-content > select{
+    width: 130px;
+}
+.myInfo-content-content > textarea{
+    width: 550px;
+    height: 180px;
+    resize: none;
+    margin-top: 25px;
+    
+}
+.textarea{
+    height: 240px;
+}
+.myInfo-content-title > button{
+    border: 1px solid rgb(177, 175, 175);
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    width: 600px;
+    margin-left: 100px;
+}
 
 
 /*footer*/

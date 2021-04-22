@@ -5,12 +5,15 @@ import lombok.Data;
 @Data
 public class ProductVO {
    private int oid; //PK
-   private String name;
+   private String title;
+   private String subTitle;
    private String description;
    private int price;
-   private int delieveryFee;
+   private int deliveryFee;
    private String tag;
    private String regDate;
+   private String contents;
+   private int authorOid;
    private int pubOid; //FK
    private int categoryOid; //FK
 }

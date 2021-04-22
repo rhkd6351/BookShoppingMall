@@ -22,9 +22,6 @@ public class LoginIntercepture implements HandlerInterceptor {
         }else{
             return true;
         }
-
-
-
     }
 
     @Override
@@ -42,7 +39,4 @@ public class LoginIntercepture implements HandlerInterceptor {
                                 Object obj, Exception e) throws Exception {
 
     }
-
-
-
 }

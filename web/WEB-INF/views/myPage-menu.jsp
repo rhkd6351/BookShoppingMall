@@ -13,10 +13,10 @@
                 <div class="menu-floor">
                     <ul>
                         <li><h3 style="">판매 관리</h3></li>
-                        <li>상품등록</li>
+                        <a href="/product/register"><li>상품등록</li></a>
                         <li>상품관리</li>
                         <li>출판사관리</li>
-                        <li>출판사등록</li>
+                        <a href="/pub/register"><li>출판사등록</li></a>
                     </ul>
                 </div>
             </div>

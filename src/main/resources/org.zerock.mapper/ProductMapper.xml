@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.ProductMapper">
+
+    <insert id="insert">
+        <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
+            select product_seq.nextval from dual
+        </selectKey>
+        insert into product_tb(oid, title, description, price, delivery_fee, reg_date, pub_oid, category_oid,
+        sub_title, contents, author_oid)
+        values (#{oid}, #{title}, #{description}, #{price}, #{deliveryFee}, sysdate, #{pubOid}, #{categoryOid},
+        #{subTitle}, #{contents}, #{authorOid})
+    </insert>
+
+    <select id="read" resultType="org.zerock.domain.ProductVO">
+        select * from product_tb where oid = #{oid}
+    </select>
+    
+</mapper>
