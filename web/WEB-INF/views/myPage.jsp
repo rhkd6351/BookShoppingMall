@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
     <link rel="stylesheet" href="../../resources/css/myPage.css?version=8">
+    <link rel="stylesheet" href="../../resources/css/myPageInfo.css?version=8">
     <script src="../../resources/js/jquery.min.js"></script>
     <script>
 
