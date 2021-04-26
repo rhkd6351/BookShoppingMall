@@ -1,10 +1,11 @@
 package org.zerock.service;
 
+import org.springframework.stereotype.Service;
 import org.zerock.domain.UserVO;
 
 import java.util.List;
 
-
+@Service
 public interface UserService {
 
     public UserVO get(String email);

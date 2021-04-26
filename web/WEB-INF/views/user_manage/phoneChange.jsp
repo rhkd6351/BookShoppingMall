@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../../../resources/css/myPage.css?version=8">
-    <link rel="stylesheet" href="../../../resources/css/pwCert.css">
+    <link rel="stylesheet" href="/resources/css/myPage.css?version=8">
+    <link rel="stylesheet" href="/resources/css/pwCert.css">
     <script>
         var phoneCheck = /(\d{3}).*(\d{3}).*(\d{4})/;
         var phone = document.getElementsByName("phone");

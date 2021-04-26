@@ -16,4 +16,6 @@ public class ProductVO {
    private int authorOid;
    private int pubOid; //FK
    private int categoryOid; //FK
+
+   public String authorName;
 }

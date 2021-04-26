@@ -21,4 +21,16 @@
         select * from pub_tb where user_email = #{userEmail}
     </select>
 
+    <delete id="delete">
+        delete from pub_tb where user_email = #{userEmail}
+    </delete>
+
+    <update id="update">
+        update pub_tb
+        set name = #{name},
+            description = #{description},
+            user_email = #{userEmail}
+        where oid = #{oid}
+    </update>
+
 </mapper>

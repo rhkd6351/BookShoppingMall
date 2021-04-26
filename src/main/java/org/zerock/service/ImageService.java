@@ -7,6 +7,8 @@ public interface ImageService {
 
     public void insertPubImage(ImagePubVO vo);
 
+    public ImagePubVO getPubImage(int pubOid);
+
     public void insertProductImage(ImageProductVO vo);
 
 }

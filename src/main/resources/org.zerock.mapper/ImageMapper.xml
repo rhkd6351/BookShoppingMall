@@ -15,4 +15,8 @@
         values (image_seq.nextval, #{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{productOid})
     </insert>
 
+    <select id="readPubImage" resultType="org.zerock.domain.ImagePubVO">
+        select * from image_pub_tb where pub_oid = #{pubOid}
+    </select>
+
 </mapper>

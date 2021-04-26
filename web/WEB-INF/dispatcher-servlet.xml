@@ -26,8 +26,10 @@
     </beans:bean>
     <interceptors>
         <interceptor>
-            <mapping path="/user/logout"/>
-            <mapping path="/user/myPage"/>
+            <mapping path="/user/*"/>
+            <mapping path="/pub/*"/>
+            <mapping path="/product/*"/>
+            <exclude-mapping path="/user/login"/>
             <beans:ref bean="interceptureBean"/>
         </interceptor>
     </interceptors>

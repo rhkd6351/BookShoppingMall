@@ -2,11 +2,12 @@ package org.zerock.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.UserVO;
 import org.zerock.mapper.UserMapper;
 
-@Service
+@Repository
 @Log4j
 @AllArgsConstructor
 public class UserServiceImpl implements UserService{

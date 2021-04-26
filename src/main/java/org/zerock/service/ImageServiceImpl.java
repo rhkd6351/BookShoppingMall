@@ -24,6 +24,12 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
+    public ImagePubVO getPubImage(int pubOid) {
+        log.info("getting PubImage...");
+        return mapper.readPubImage(pubOid);
+    }
+
+    @Override
     public void insertProductImage(ImageProductVO vo) {
         log.info("inserting ProductImage...");
         mapper.insertProductImage(vo);

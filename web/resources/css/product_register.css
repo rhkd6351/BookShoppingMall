@@ -73,3 +73,11 @@
     width: 600px;
     margin-left: 100px;
 }
+
+.form-button{
+    border: 1px solid rgb(177, 175, 175);
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 22.5px;
+}

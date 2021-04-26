@@ -11,4 +11,8 @@ public interface PubMapper {
     public PubVO readAccordingToUserEmail(@Param("userEmail") String userEmail);
 
     public void insert(PubVO vo);
+
+    public int delete(@Param("userEmail") String userEmail);
+
+    public void update(PubVO vo);
 }

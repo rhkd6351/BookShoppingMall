@@ -13,12 +13,13 @@
                 <li><a href="/user/myPage">내정보</a></li> <!--마이페이지-->
                 <li>장바구니</li>
                 <li>고객센터</li>
+                <li>제작자</li>
             </ul>
         </nav>
 
         <div class="bookSearch">
             <div class="bookSearch-aside-left">
-                <a href="/user/myPage"><img src="../../resources/img/logo_search.png" alt="" id="logo-image"></a>
+                <a href="/user/myPage"><img src="/resources/img/logo_search.png" alt="" id="logo-image"></a>
             </div>
             <div class="bookSearch-aside-center">
                 <form action="#" id="search-form">
@@ -33,7 +34,7 @@
                 </form>
             </div>
             <div class="bookSearch-aside-right">
-                <img src="../../resources/img/logo_event.jpeg" alt="" id="event-image">
+                <img src="/resources/img/logo_event.jpeg" alt="" id="event-image">
             </div>
         </div>
     </header>

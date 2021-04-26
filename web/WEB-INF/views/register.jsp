@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../../resources/css/register.css">
+    <link rel="stylesheet" href="/resources/css/register.css">
 </head>
-<script src="../../resources/js/jquery.min.js"></script>
+<script src="/resources/js/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
         $("#login-id").on("change", function(){
@@ -70,5 +70,5 @@
     </div>
 </div>
 </body>
-<script src="../../resources/js/reg_validation.js"></script>
+<script src="/resources/js/reg_validation.js"></script>
 </html>

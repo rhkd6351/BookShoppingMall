@@ -111,7 +111,7 @@ public class UserController {
 
         //property 요청
         userProperty = kakaoService.getProperty(accessToken);
-
+        log.info(userProperty);
         UserVO vo = userService.get(userProperty.get("email"));
         if(vo == null){ // 계정이 없으면 생성
             vo = new UserVO();

@@ -34,7 +34,7 @@ public class FileUploadService {
         }catch(Exception e){
             e.printStackTrace();
         }
-        imagePubVO.setPath(saveFile.getPath());
+        imagePubVO.setPath(saveFile.getPath().substring(saveFile.getPath().indexOf("/resources")));
         return imagePubVO;
 
     }

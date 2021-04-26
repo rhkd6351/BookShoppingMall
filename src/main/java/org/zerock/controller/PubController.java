@@ -1,5 +1,6 @@
 package org.zerock.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.apache.ibatis.annotations.Param;
@@ -52,7 +53,6 @@ public class PubController {
         return "/pub_manage/pub_register";
     }
 
-    @ResponseBody
     @PostMapping("/register")
     public String pubRegister(@Param("pub_name") String pub_name, @Param("pub_desc") String pub_desc, @Param("pub_img") MultipartFile pub_img,
                               Model model){
@@ -72,4 +72,49 @@ public class PubController {
         return "redirect:/pub/sendMessage";
     }
 
+    @PostMapping("/modify")
+    public String pubModify(@RequestParam(value = "img", required= false) MultipartFile img,
+                            @RequestParam("description") String description,
+                            @RequestParam("oid") int oid,
+                            Model model){
+        PubVO pubVO = pubService.get(oid);
+        pubVO.setDescription(description);
+        if(img != null){
+           ImagePubVO imagePubVO = fileUploadService.pubImageUpload(img,pubVO.getName());
+           //파일명을 이름기반으로 저장하니 db업데이트는 필요없음
+            //TODO 수정 필요
+        }
+        pubService.update(pubVO);
+
+        model.addAttribute("message","수정에 성공하였습니다.");
+        return "redirect:/pub/sendMessage";
+    }
+
+    @GetMapping("/manage")
+    public String pubManage(Model model){
+        UserVO userVo = (UserVO) session.getAttribute("user");
+        PubVO pubVO = pubService.get(userVo.getEmail());
+
+        if(pubVO == null){ //출판사 등록여부 확인
+            model.addAttribute("message", "출판사 등록 후 관리가 가능합니다.");
+            return "redirect:/product/sendMessage";
+        }
+
+        model.addAttribute("pub",pubVO);
+        model.addAttribute("pubImage", imageService.getPubImage(pubVO.getOid()));
+        return "/pub_manage/pub_manage";
+    }
+
+    @GetMapping("/delete")
+    public String pubDelete(Model model){
+        UserVO userVO = (UserVO) session.getAttribute("user");
+        try{
+            pubService.delete(userVO.getEmail());
+        }catch(Exception e){
+            model.addAttribute("message", "오류가 발생하였습니다.");
+            return "redirect:/pub/sendMessage";
+        }
+        model.addAttribute("message", "삭제되었습니다.");
+        return "redirect:/pub/sendMessage";
+    }
 }

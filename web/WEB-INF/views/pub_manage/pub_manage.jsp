@@ -9,14 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
     <link rel="stylesheet" href="/resources/css/myPage.css?version=10">
-    <link rel="stylesheet" href="/resources/css/pub_register.css?version=2">
+    <link rel="stylesheet" href="/resources/css/pub_manage.css?version=2">
     <script src="/resources/js/jquery.min.js"></script>
     <script>
-        function pubRegi(){
-            var form = document.pub_regi;
-            form.submit();
+        function showFile(){
+            $("#hiddenFile").attr("type", "file");
         }
 
+        function deletePub(){
+            location.href="/pub/delete";
+        }
+
+        function modifyPub(){
+            var form = document.modifyForm;
+            form.submit();
+        }
     </script>
 </head>
 <body>
@@ -28,28 +35,27 @@
             <jsp:include page="../myPage-menu.jsp"/>
                 <div class="content-main">
                     <div class="content-main-title">
-                        출판사 등록
+                        출판사 관리
                     </div>
                     <div class="content-main-content">
-                        <form action="/pub/register" method="post" enctype="multipart/form-data"
-                        name="pub_regi">
+                        <form action="/pub/modify" enctype="multipart/form-data" name="modifyForm" method="post">
                             <div class="myInfo-content">
                                 <div class="myInfo-content-title">
-                                    사진
+                                    대표 이미지
                                 </div>
                                 <div class="myInfo-content-content">
-                                    출판사 대표 이미지를 등록하세요 (50px * 50px)
+                                    <img src="${pubImage.path}" alt="">
                                 </div>
-                                <input type="file" value="파일 선택" name="pub_img"/>
+                                <button class="form-button" id="changeImage" type="button" onclick="showFile()">이미지 변경</button>
+                                <input type="hidden" id = "hiddenFile" name="img">
 
                             </div>
                             <div class="myInfo-content">
                                 <div class="myInfo-content-title">
-                                    이름
+                                    출판사명
                                 </div>
                                 <div class="myInfo-content-content">
-                                    <input type="text" style="width: 200px;" maxlength="15" name="pub_name">
-
+                                    <input type="text" style="width: 200px;" maxlength="15" value="${pub.name}" disabled name="name">
                                 </div>
 
                             </div>
@@ -58,13 +64,15 @@
                                     소개
                                 </div>
                                 <div class="myInfo-content-content">
-                                    <textarea id="" maxlength="75" name="pub_desc"></textarea>
+                                    <textarea name="description" id="" maxlength="75">${pub.description}</textarea>
                                 </div>
+                                <input type="hidden" value="${pub.oid}" name = "oid">
 
                             </div>
                             <br/><br/>
                         </form>
-                        <button class="form-button final" onclick="pubRegi()">등록하기</button>
+                        <button class="form-button final" type="button" onclick="modifyPub()">수정</button>
+                        <button class="form-button final" type="button" onclick="deletePub()">삭제</button>
                     </div>
 
                 </div>

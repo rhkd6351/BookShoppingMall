@@ -15,8 +15,26 @@
         #{subTitle}, #{contents}, #{authorOid})
     </insert>
 
+    <select id="readAccordingToPubOid" resultType="org.zerock.domain.ProductVO">
+        select * from product_tb where pub_oid = #{pubOid}
+    </select>
+
     <select id="read" resultType="org.zerock.domain.ProductVO">
         select * from product_tb where oid = #{oid}
     </select>
+
+    <update id="update">
+        update product_tb
+        set title = #{title},
+            description = #{description},
+            price = #{price},
+            delivery_fee = #{deliveryFee},
+            pub_oid =  #{pubOid},
+            category_oid = #{categoryOid},
+            sub_title= #{subTitle},
+            contents = #{contents},
+            author_oid = #{authorOid}
+        where oid = #{oid}
+    </update>
     
 </mapper>

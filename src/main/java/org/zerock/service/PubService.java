@@ -10,4 +10,8 @@ public interface PubService {
     public void insert(PubVO vo);
 
     public PubVO get(String userEmail);
+
+    public int delete(String userEmail);
+
+    public void update(PubVO vo);
 }

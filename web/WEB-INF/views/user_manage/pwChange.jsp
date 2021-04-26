@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="../../../resources/css/myPage.css?version=8">
-    <link rel="stylesheet" href="../../../resources/css/pwCert.css?version=4">
-    <script src="../../../resources/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/myPage.css?version=8">
+    <link rel="stylesheet" href="/resources/css/pwCert.css?version=4">
+    <script src="/resources/js/jquery.min.js"></script>
     <script>
         var pwCheck = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/;
         var pw = document.getElementsByName("pw");
