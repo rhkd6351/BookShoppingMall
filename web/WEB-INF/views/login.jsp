@@ -25,7 +25,7 @@
 <div class="content">
     <div class="title">
         <br/>
-        BOOK <span style="color: #49312a;">SHOPPING</span> MALL
+        <a href="/">BOOK <span style="color: #49312a;">SHOPPING</span> MALL</a>
     </div>
 
     <div class="login">

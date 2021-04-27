@@ -58,11 +58,11 @@ public class PubController {
                               Model model){
         UserVO userVo = (UserVO) session.getAttribute("user");
 
-        PubVO pubVO = new PubVO();
-        pubVO.setName(pub_name);
-        pubVO.setDescription(pub_desc);
-        pubVO.setUserEmail(userVo.getEmail());
-        pubService.insert(pubVO);
+        PubVO pubVO = new PubVO(pub_name,pub_desc, userVo.getEmail());
+//        pubVO.setName(pub_name);
+//        pubVO.setDescription(pub_desc);
+//        pubVO.setUserEmail(userVo.getEmail());
+//        pubService.insert(pubVO);
 
         ImagePubVO imagePubVO = fileUploadService.pubImageUpload(pub_img, pub_name);
         imagePubVO.setPubOid(pubVO.getOid());

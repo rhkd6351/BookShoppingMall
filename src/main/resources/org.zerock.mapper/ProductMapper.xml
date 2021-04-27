@@ -36,5 +36,18 @@
             author_oid = #{authorOid}
         where oid = #{oid}
     </update>
-    
+
+    <select id="newBookLayer" resultType="org.zerock.domain.ProductVO">
+        select a.oid, a.title, a.price, b.path as rep_uri, c.path as desc_uri, d.name as author_name
+        from product_tb a ,
+        image_product_tb b,
+        image_product_tb c,
+        author_tb d
+        where (a.oid = b.product_oid AND b.image_list_oid = 2)
+        and (a.oid = c.product_oid AND c.image_list_oid = 3)
+        and (a.author_oid = d.oid)
+        and (rownum &lt;= #{num})
+        order by a.reg_date desc
+    </select>
+
 </mapper>

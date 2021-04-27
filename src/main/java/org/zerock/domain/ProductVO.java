@@ -18,4 +18,6 @@ public class ProductVO {
    private int categoryOid; //FK
 
    public String authorName;
+   public String repUri;
+   public String descUri;
 }

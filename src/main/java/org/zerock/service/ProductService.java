@@ -11,6 +11,8 @@ public interface ProductService {
 
     public ArrayList<ProductVO> getAccordingToPubOid(int oid);
 
+    public ArrayList<ProductVO> getNewBookLayer(int num);
+
     public void insert(ProductVO vo);
 
     public void update(ProductVO vo);

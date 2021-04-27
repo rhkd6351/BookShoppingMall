@@ -60,7 +60,7 @@ public class FileUploadService {
         }catch(Exception e){
             e.printStackTrace();
         }
-        imageProductVO.setPath(saveFile.getPath());
+        imageProductVO.setPath(saveFile.getPath().substring(saveFile.getPath().indexOf("/resources")));
 
         return imageProductVO;
 

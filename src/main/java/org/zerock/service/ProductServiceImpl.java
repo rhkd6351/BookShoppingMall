@@ -28,6 +28,12 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    public ArrayList<ProductVO> getNewBookLayer(int num) {
+        log.info("getting New Book Layer Products num = " + num);
+        return mapper.newBookLayer(num);
+    }
+
+    @Override
     public void insert(ProductVO vo) {
         log.info("inserting Product...");
         mapper.insert(vo);

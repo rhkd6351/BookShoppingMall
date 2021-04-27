@@ -15,5 +15,7 @@ public interface ProductMapper {
     public ArrayList<ProductVO> readAccordingToPubOid(int pubOid);
 
     public void update(ProductVO vo);
+
+    public ArrayList<ProductVO> newBookLayer(@Param("num") int num);
     
 }
