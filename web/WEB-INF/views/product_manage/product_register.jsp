@@ -33,6 +33,13 @@
                 return false;
             }
             else{
+                var str = $("#description").val();
+                str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+                $("#description").val(str);
+                
+                str = $("#contents").val();
+                str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+                $("#contents").val(str);
                 var form = document.product_regi;
                 form.submit();
             }
@@ -124,7 +131,7 @@
                                     내용
                                 </div>
                                 <div class="myInfo-content-content">
-                                    <textarea name="description" maxlength="2000" placeholder="최대 2000자"></textarea>
+                                    <textarea id = "description" name="description" maxlength="3000" placeholder="최대 2000자"></textarea>
                                 </div>
                             </div>
 
@@ -133,7 +140,7 @@
                                     목차
                                 </div>
                                 <div class="myInfo-content-content">
-                                    <textarea name="contents" maxlength="2000" placeholder="최대 2000자"></textarea>
+                                    <textarea id = "contents" name="contents" maxlength="3000" placeholder="최대 2000자"></textarea>
                                 </div>
                             </div>
 

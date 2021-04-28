@@ -38,16 +38,34 @@
     </update>
 
     <select id="newBookLayer" resultType="org.zerock.domain.ProductVO">
-        select a.oid, a.title, a.price, b.path as rep_uri, c.path as desc_uri, d.name as author_name
-        from product_tb a ,
-        image_product_tb b,
-        image_product_tb c,
-        author_tb d
-        where (a.oid = b.product_oid AND b.image_list_oid = 2)
-        and (a.oid = c.product_oid AND c.image_list_oid = 3)
-        and (a.author_oid = d.oid)
-        and (rownum &lt;= #{num})
-        order by a.reg_date desc
+        select *
+        from (
+                 select a.oid, a.title, a.price, b.path as rep_uri, c.path as desc_uri, d.name as author_name
+                 from product_tb a,
+                      image_product_tb b,
+                      image_product_tb c,
+                      author_tb d
+                 where (a.oid = b.product_oid AND b.image_list_oid = 2)
+                   and (a.oid = c.product_oid AND c.image_list_oid = 3)
+                   and (a.author_oid = d.oid)
+                 order by a.reg_date desc
+             )
+        where rownum &lt;= #{num}
+    </select>
+
+    <select id="readSpecProduct" resultType="org.zerock.dto.ProductViewDTO">
+        select a.oid, a.title, a.sub_title, a.price, a.delivery_fee, a.description, a.contents, b.name as author_name, b.description as author_desc ,
+               c.name as pub_name, d.path as rep_uri, e.path as desc_uri, f.name as category_name
+        from product_tb a,
+             author_tb b,
+             pub_tb c,
+             image_product_tb d,
+             image_product_tb e,
+             category_tb f
+        where (a.oid = #{oid}) and (a.author_oid = b.oid) and (a.pub_oid = c.oid)
+          and (a.oid = d.product_oid AND d.image_list_oid = 2)
+          and (a.oid = e.product_oid AND e.image_list_oid = 3)
+          and (a.category_oid = f.oid)
     </select>
 
 </mapper>

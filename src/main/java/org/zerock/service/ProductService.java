@@ -1,6 +1,7 @@
 package org.zerock.service;
 
 import org.zerock.domain.ProductVO;
+import org.zerock.dto.ProductViewDTO;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,8 @@ public interface ProductService {
     public ArrayList<ProductVO> getAccordingToPubOid(int oid);
 
     public ArrayList<ProductVO> getNewBookLayer(int num);
+
+    public ProductViewDTO getSpecProduct(int oid);
 
     public void insert(ProductVO vo);
 

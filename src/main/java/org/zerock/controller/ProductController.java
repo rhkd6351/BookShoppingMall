@@ -144,4 +144,11 @@ public class ProductController {
 
         return "/product_manage/product_manage";
     }
+
+
+    @GetMapping("/view")
+    public String productView(@RequestParam("oid") int oid, Model model){
+        model.addAttribute("product",productService.getSpecProduct(oid));
+        return "/product/product";
+    }
 }

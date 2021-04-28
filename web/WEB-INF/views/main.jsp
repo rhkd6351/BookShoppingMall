@@ -100,11 +100,14 @@
             <c:forEach items="${newBookLayer}" var="book">
                 <div class="second-item">
                     <div class="book-box">
-                        <img src="<c:out value="${book.repUri}"/>" alt="" class="book-img">
+                        <a href="/product/view?oid=${book.oid}">
+                            <img src="<c:out value="${book.repUri}"/>" alt="" class="book-img">
+                        </a>
                         <div class="item-title"><c:out value="${book.title}"/></div>
                         <div class="item-author"><c:out value="${book.authorName}"/></div>
                         <div class="item-price"><c:out value="${book.price}"/>원</div>
                     </div>
+
                 </div>
             </c:forEach>
         </section>

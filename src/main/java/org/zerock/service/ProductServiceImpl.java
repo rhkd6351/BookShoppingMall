@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.ProductVO;
+import org.zerock.dto.ProductViewDTO;
 import org.zerock.mapper.ProductMapper;
 
 import java.util.ArrayList;
@@ -31,6 +32,12 @@ public class ProductServiceImpl implements ProductService{
     public ArrayList<ProductVO> getNewBookLayer(int num) {
         log.info("getting New Book Layer Products num = " + num);
         return mapper.newBookLayer(num);
+    }
+
+    @Override
+    public ProductViewDTO getSpecProduct(int oid) {
+        log.info("getting spec product");
+        return mapper.readSpecProduct(oid);
     }
 
     @Override
