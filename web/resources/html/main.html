@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yekwang</title>
+    <link rel="stylesheet" href="../css/myPage.css">
+    <link rel="stylesheet" href="../css/main.css">
+    
+</head>
+<script src="https://kit.fontawesome.com/7226f29584.js" crossorigin="anonymous"></script>
+<script src="../js/jquery.min.js"></script>
+<script>
+    $(function(){
+        var slider = $(".slider");
+        firstSlide = slider.find(".slide-img").first()
+        .animate({'opacity':1},200);
+        
+    function nextSlide() {
+        slider.find(".slide-img").first().appendTo(slider);
+        slider.find(".slide-img").last().animate({'opacity':0}, 400);
+        slider.find(".slide-img").first().animate({'opacity':1}, 400);
+    }
+
+    function prevSlide() {
+        slider.find(".slide-img").last().prependTo(slider);
+        slider.find(".slide-img").eq(1).animate({'opacity':0}, 400);
+        slider.find(".slide-img").first().animate({'opacity':1}, 400);
+    }
+
+    var interval;
+    function startSlide(){
+        interval = setInterval(nextSlide,3000);
+    }
+    function stopSlide(){
+        clearInterval(interval);
+    }
+    $(".content-aside-center").hover(function(){
+        $(".arrow").first().animate({"opacity":1},100);
+        $(".arrow").eq(1).animate({"opacity":1},100);
+        stopSlide();
+    }, function(){
+        $(".arrow").first().animate({"opacity":0},100);
+        $(".arrow").eq(1).animate({"opacity":0},100);
+        $(".arrow").attr("opacity", 0);
+        startSlide();
+    });
+
+
+    startSlide();
+
+    $(".right").on("click",function(){
+        nextSlide();
+    })
+    $(".left").on("click",function(){
+        prevSlide();
+    })
+    
+    });
+
+</script>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <nav>
+                <ul class="nav-aside-left">
+                    <li>메인화면</li>
+                    <li>베스트북</li>
+                    <li>국내도서</li>
+                    <li>국외도서</li>
+                </ul>
+
+                <ul class="nav-aside-right">
+                    <li>로그인</li> <!--로그아웃-->
+                    <li>회원가입</li> <!--마이페이지-->
+                    <li>장바구니</li>
+                    <li>고객센터</li>
+                </ul>
+            </nav>
+
+            <div class="bookSearch">
+                <div class="bookSearch-aside-left">
+                    <img src="../img/logo_search.png" alt="" id="logo-image">
+                </div>
+                <div class="bookSearch-aside-center">
+                    <form action="#" id="search-form">
+                        <select name="" id="">
+                            <option value="">통합검색</option>
+                            <option value="">제목검색</option>
+                            <option value="">저자검색</option>
+                            <option value="">내용검색</option>
+                        </select>
+                        <input type="text">
+                        <input type="submit" name="" id="" value="검색">
+                    </form>
+                </div>
+                <div class="bookSearch-aside-right">
+                    <img src="../img/logo_event.jpeg" alt="" id="event-image">
+                </div>
+            </div>
+        </header>
+        <div class="nav2">
+            <ul>
+                <li>
+                    <i class="fas fa-bars"></i> 카테고리
+                </li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <section class="content-aside-left">
+                <img src="../img/adBanner/ad1.png" alt="" class="left-banner">
+            </section>
+            <section class="content-aside-center">
+                <div class="slider">
+                    <img src="../img/slider/1.jpeg" class = "slide-img" alt="">
+                    <img src="../img/slider/3.jpeg" class = "slide-img" alt="">
+                    <img src="../img/slider/2.jpeg" class = "slide-img" alt="">
+                </div>
+                <i class="arrow left fas fa-angle-left"></i>
+                <i class="arrow right fas fa-angle-right"></i>
+            </section>
+            <section class="content-aside-right">
+                <div class="right-title">
+                    최근 본 도서
+                </div>
+                <div class="right-content">
+                    <img src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                </div>
+                
+                <div class="right-nav">
+                    <i class="fas fa-angle-left"></i>
+                    1/3
+                    <i class="fas fa-angle-right"></i>
+                </div>
+            </section>
+
+            <section class="non-main">
+                <div class="second-title">
+                    신간 도서
+                </div>
+                <div class="second-item">
+                    <div class="book-box">
+                        <img src="../img/product/클린 아키텍처_product_represent.jpeg" alt="" class="book-img">
+                        <div class="item-title">클린 아키텍처123123123</div>
+                        <div class="item-author">박응용 | 애강</div>
+                        <div class="item-price">20,000원</div>
+                    </div>
+                </div>
+                <div class="second-item">
+                    <div class="book-box">
+                        <img src="../img/product/클린 아키텍처_product_represent.jpeg" alt="" class="book-img">
+                        <div class="item-title">클린 아키텍처</div>
+                        <div class="item-author">박응용 | 애강</div>
+                        <div class="item-price">20,000원</div>
+                    </div>
+                </div>
+                <div class="second-item">
+                    <div class="book-box">
+                        <img src="../img/product/클린 아키텍처_product_represent.jpeg" alt="" class="book-img">
+                        <div class="item-title">클린 아키텍처</div>
+                        <div class="item-author">박응용 | 애강</div>
+                        <div class="item-price">20,000원</div>
+                    </div>
+                </div>
+                <div class="second-item">
+                    <div class="book-box">
+                        <img src="../img/product/클린 아키텍처_product_represent.jpeg" alt="" class="book-img">
+                        <div class="item-title">클린 아키텍처</div>
+                        <div class="item-author">박응용 | 애강</div>
+                        <div class="item-price">20,000원</div>
+                    </div>
+                </div>
+            </section>
+            <section class="non-main">3층 컨텐츠</section>
+            <section class="non-main">4층 컨텐츠</section>
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                    rhkd6351@kyonggi.ac.kr <br/> <br/>
+                    https://github.com/rhkd6351
+            </div>
+            
+        </footer>
+    </div>
+
+</body>
+</html>
