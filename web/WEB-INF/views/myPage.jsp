@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="/resources/css/myPage.css?version=8">
-    <link rel="stylesheet" href="/resources/css/myPageInfo.css?version=8">
+    <link rel="stylesheet" href="/resources/css/myPage.css?version=1">
+    <link rel="stylesheet" href="/resources/css/myPageInfo.css?version=1">
     <script src="/resources/js/jquery.min.js"></script>
     <script>
 
@@ -27,11 +27,11 @@
 </head>
 <body>
 <div class="page-wrapper">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="/resources/jsp/header.jsp"/>
     <div class="content">
         <section class="content-aside-center">
-            <jsp:include page="myPage-top.jsp"/>
-            <jsp:include page="myPage-menu.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-top.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-menu.jsp"/>
             <div class="content-main">
                 <div class="content-main-title">
                     기본 회원정보
@@ -96,7 +96,7 @@
             </div>
     </div>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="/resources/jsp/footer.jsp"/>
 </div>
 
 </body>

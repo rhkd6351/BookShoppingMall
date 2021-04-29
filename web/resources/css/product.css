@@ -1,0 +1,153 @@
+body{
+    background-color: #f1edec;
+}
+header{
+    background-color: white;
+}
+.content{
+    overflow:hidden;
+    margin: 0 auto;
+    width: 1220px;
+    margin-top: 5px;
+
+}
+.content > *{
+    float: left;
+}
+.content-aside-left{
+    width: 100px;
+    height: 320px;
+    
+}
+.left-banner{
+    width: 100px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0);
+}
+
+.content-aside-center{
+    margin: 0 30px;
+    width: 958px;
+    height: 600px; min-height: 330px;
+    background-color: white;
+    border: 1px solid #aaaaaa;
+}
+.center{
+    
+    float: left;
+    width: 479px;
+}
+.right-item{
+    margin-left: 20px;
+}
+.item-title{
+    margin-top: 50px;
+    font-size: 2em;  
+    font-weight: bold; 
+}
+.item-subtitle{
+    font-size: 1.3em;
+    color: grey;
+}
+.item-desc{
+    margin-top: 5px;
+    font-size: 0.9em;
+    margin-bottom: 50px;
+}
+.price > tbody > tr > td:first-child{
+    width: 100px;
+    height: 50px;   
+}
+.price{
+    margin-left: 20px;
+}
+
+
+.product-rep-img{
+    width: 440px;
+    height: 580px;
+    margin: 10px 15px;
+    border: 1px solid #aaaaaa;
+}
+.non-main{
+    width: 960px;
+    background-color: white;
+    border: 1px solid rgb(168, 168, 168);
+    margin-left: 130px;
+    margin: 20px 0 20px 130px;
+    min-height: 100px;
+}
+
+
+.right-title{
+    background-color: #444444;
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+    height: 30px;
+    line-height: 30px;
+}
+
+.second-item{
+    float: left;
+    width: 239px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+.second-title{
+    height: 40px; line-height: 40px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+
+
+.bold{
+    font-weight: bold;
+}
+.red{
+    color: rgb(155, 31, 31);
+}
+.em15{
+    font-size: 1.5em;
+}
+.floating{
+    float: left;
+}
+.right-item-button{
+    margin: 100px 0 0 40px;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #686868;
+    background-color: white;
+    color: white;
+    border-radius: 10px;
+    
+}
+.buy{
+    background-color: #662422;
+}
+.cart{
+    background-color: #1a633e;
+}
+
+.non-title{
+    margin: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
+.non-desc{
+    margin: 10px;
+    width: 940px;
+    background-color: #f3f3f3;
+    
+}
+
+.desc-img{
+    width: 940px;
+    margin: 0 auto;
+    object-fit: cover;
+}

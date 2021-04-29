@@ -1,0 +1,75 @@
+.content-main{
+    float: left;
+    width: 822px;
+    margin: 10px 0 10px 10px;
+    border: 2px solid #74534b;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #74534b;
+    min-height: 350px;
+}
+.content-main-title{
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #74534b;
+    
+}
+.myInfo-content{
+    width: 822px;
+    height: 75px;
+    border-bottom: 1px solid grey;
+}
+.myInfo-content div{
+    float: left;
+    
+}
+.myInfo-content-title{
+    width: 100px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: bold;
+}
+.myInfo-content-content{
+    width: 472px;
+    padding-left: 50px;
+    line-height: 75px;
+}
+.myInfo-content img{
+    margin-top: 12.5px;
+    width: 50px; height: 50px;
+    position: absolute;
+}
+.myInfo-content textarea{
+    width: 400px;
+    height: 150px;
+    resize: none;
+    margin-top: 12.5px;
+}
+.myInfo-content input[type="file"]{
+    background-color: white;
+    width: 200px;
+    height: 30px;
+    margin-top: 22.5px;
+    margin-left: 30px;
+}
+.form-button{
+    border: 1px solid rgb(177, 175, 175);
+    background-color: white;
+    width: 100px;
+    height: 30px;
+    margin-top: 22.5px;
+}
+.myInfo-content:nth-child(3){
+    height: 180px;
+    border: none;
+}
+.final{
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-bottom: 24px;
+}
+
+#changeImage{
+    margin-left: 150px;
+}
+

@@ -1,0 +1,110 @@
+body{
+    background-color: #f1edec;
+}
+
+header{
+    background-color: white;
+}
+.content{
+    
+    margin: 0 auto;
+    width: 1220px;
+    margin-top: 5px;
+}
+.content > *{
+    float: left;
+}
+.content-aside-left{
+    width: 100px;
+    height: 320px;
+}
+.left-banner{
+    width: 100px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px rgb(0, 0, 0);
+}
+
+.content-aside-center{
+    margin: 0 30px;
+    width: 958px;
+    height: 330px; min-height: 330px;
+}
+.non-main{
+    width: 960px;
+    background-color: white;
+    border: 1px solid rgb(168, 168, 168);
+    margin-left: 130px;
+    margin: 20px 0 20px 130px;
+    height: 300px;
+}
+
+.slider > img{
+    border: 1px solid rgb(168, 168, 168);
+    position: absolute;
+    width: 956px;
+    height: 320px;
+    object-fit: cover;
+    opacity: 0;
+
+}
+.next{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color: black;
+}
+
+.arrow{
+    position: relative;
+    top: 135px;
+    font-size: 3em;
+    color: grey;
+    opacity: 0;
+    z-index: 999;
+}
+.left{
+    left: 20px;
+}
+.right{
+    left: 890px;
+}
+
+.right-title{
+    background-color: #444444;
+    color: rgb(255, 255, 255);
+    font-size: 0.8em;
+    height: 30px;
+    line-height: 30px;
+}
+
+.second-item{
+    float: left;
+    width: 239px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+.second-title{
+    height: 40px; line-height: 40px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(168, 168, 168);
+}
+.book-box{
+    width: 120px;
+    margin: 0 auto;
+}
+.book-img{
+    width: 120px;
+    height: 166px;
+    border: 1px solid rgb(168, 168, 168);
+}
+.item-title{
+    font-weight: bold;
+    height: 16px;
+    overflow: hidden;
+}
+.item-author{   
+    color: grey;
+}

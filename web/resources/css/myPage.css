@@ -12,12 +12,16 @@ li {
 html, body{
     height: 100%;
     min-height: 700px;
+    min-width: 1300px;
+    background-color: #f1edec;
 }
 /* header */
 header{
     overflow: hidden;
+    background-color: white;
 }
 nav{
+    margin: 0 auto;
     width: 100%;
     background-color: #74534b;
     height: 35px;
@@ -119,6 +123,7 @@ nav li{
 
 /* main contents*/
 .content{
+    overflow: hidden;
     min-height: 700px;
 }
 .content-aside-center{
@@ -186,6 +191,7 @@ nav li{
     width: 90px;
     padding-left: 30px;
     box-shadow: 0px 0px 3px #74534b;
+    background-color: white;
 }
 .menu-floor{
     margin: 30px 0 30px 0;
@@ -208,4 +214,21 @@ footer{
     width: 802px;
     margin: 0 auto;
     color: #575757;
+}
+
+.right-content img{
+    width: 70px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+
+.content-aside-right{
+    position: relative;
+    float: none;
+    margin-bottom: -100px;
+    width: 98px;
+    min-height: 170px;
+    background-color: white;
+    border: 1px solid #aaaaaa;
+    text-align: center;
 }

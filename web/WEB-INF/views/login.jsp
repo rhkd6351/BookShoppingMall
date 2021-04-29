@@ -54,7 +54,7 @@
 <%--        rhkd6351@kyonggi.ac.kr <br/>--%>
 <%--    </div>--%>
 </div>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="/resources/jsp/footer.jsp"/>
 
 
 

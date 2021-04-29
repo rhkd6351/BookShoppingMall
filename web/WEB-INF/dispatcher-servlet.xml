@@ -22,7 +22,9 @@
         <beans:property name="suffix" value=".jsp" />
     </beans:bean>
 
-    <beans:bean id="interceptureBean" class="org.zerock.intercepture.LoginIntercepture">
+    <beans:bean id="LoginInterceptureBean" class="org.zerock.intercepture.LoginIntercepture">
+    </beans:bean>
+    <beans:bean id="RecentBookInterceptureBean" class="org.zerock.intercepture.RecentBookIntercepture">
     </beans:bean>
     <interceptors>
         <interceptor>
@@ -30,7 +32,12 @@
             <mapping path="/pub/*"/>
             <mapping path="/product/*"/>
             <exclude-mapping path="/user/login"/>
-            <beans:ref bean="interceptureBean"/>
+            <exclude-mapping path="/product/view"/>
+            <beans:ref bean="LoginInterceptureBean"/>
+        </interceptor>
+        <interceptor>
+            <mapping path="/*"/>
+            <beans:ref bean="RecentBookInterceptureBean"/>
         </interceptor>
     </interceptors>
 

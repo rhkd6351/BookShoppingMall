@@ -68,4 +68,11 @@
           and (a.category_oid = f.oid)
     </select>
 
+    <select id="readRecentProduct" resultType="org.zerock.dto.ProductRecentDTO">
+        select a.oid, b.path as repUri
+        from product_tb a,
+             image_product_tb b
+        where a.oid = b.product_oid and b.image_list_oid = 2 and a.oid = #{oid}
+    </select>
+
 </mapper>

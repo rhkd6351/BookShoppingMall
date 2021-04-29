@@ -49,11 +49,11 @@
 </head>
 <body>
 <div class="page-wrapper">
-    <jsp:include page="../header.jsp"/>
+    <jsp:include page="/resources/jsp/header.jsp"/>
     <div class="content">
         <section class="content-aside-center">
-            <jsp:include page="../myPage-top.jsp"/>
-            <jsp:include page="../myPage-menu.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-top.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-menu.jsp"/>
                 <div class="content-main">
                         <div class="content-main-title">
                             상품정보 수정 [${pub.name}]
@@ -159,7 +159,7 @@
                                     <input type="hidden" name="mainImage" id="hiddenFile1">
                                 </div>
                             </div>
-    
+
                             <div class="myInfo-content">
                                 <div class="myInfo-content-title">
                                     본문 이미지
@@ -169,7 +169,7 @@
                                     <input type="hidden" name="descriptionImage" id="hiddenFile2">
                                 </div>
                             </div>
-    
+
                             <div class="myInfo-content">
                                 <div class="myInfo-content-title">
                                     <button onclick="register()" type="button">수정</button>
@@ -182,7 +182,7 @@
         </section>
     </div>
 
-    <jsp:include page="../footer.jsp"/>
+    <jsp:include page="/resources/jsp/footer.jsp"/>
 </div>
 
 </body>

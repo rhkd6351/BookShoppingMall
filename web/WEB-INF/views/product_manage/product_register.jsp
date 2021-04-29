@@ -48,11 +48,11 @@
 </head>
 <body>
 <div class="page-wrapper">
-    <jsp:include page="../header.jsp"/>
+    <jsp:include page="/resources/jsp/header.jsp"/>
     <div class="content">
         <section class="content-aside-center">
-            <jsp:include page="../myPage-top.jsp"/>
-            <jsp:include page="../myPage-menu.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-top.jsp"/>
+            <jsp:include page="/resources/jsp/myPage-menu.jsp"/>
                 <div class="content-main">
                         <div class="content-main-title">
                             상품 등록 [${pub.name}]
@@ -172,7 +172,7 @@
                 </div>
     </div>
 
-    <jsp:include page="../footer.jsp"/>
+    <jsp:include page="/resources/jsp/footer.jsp"/>
 </div>
 
 </body>

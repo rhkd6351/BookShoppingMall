@@ -8,10 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.zerock.domain.*;
+import org.zerock.dto.ProductRecentDTO;
 import org.zerock.service.*;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
+import java.util.ArrayList;
 
 @Controller
 @AllArgsConstructor
@@ -148,6 +150,17 @@ public class ProductController {
 
     @GetMapping("/view")
     public String productView(@RequestParam("oid") int oid, Model model){
+
+        //최근 본 제품 리스트 추가
+        ArrayList<ProductRecentDTO> recentBookList = (ArrayList<ProductRecentDTO>) session.getAttribute("recentBookList");
+        if(recentBookList.size() >= 1) {
+            recentBookList.removeIf(i -> (i.getOid() == oid)); //중복시 삭제후 다시 생성
+        }
+
+
+        recentBookList.add(0,productService.getRecentProduct(oid));
+        session.setAttribute("recentBookList",recentBookList);
+
         model.addAttribute("product",productService.getSpecProduct(oid));
         return "/product/product";
     }

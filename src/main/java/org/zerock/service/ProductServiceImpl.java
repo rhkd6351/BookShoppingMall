@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
 import org.zerock.domain.ProductVO;
+import org.zerock.dto.ProductRecentDTO;
 import org.zerock.dto.ProductViewDTO;
 import org.zerock.mapper.ProductMapper;
 
@@ -38,6 +39,12 @@ public class ProductServiceImpl implements ProductService{
     public ProductViewDTO getSpecProduct(int oid) {
         log.info("getting spec product");
         return mapper.readSpecProduct(oid);
+    }
+
+    @Override
+    public ProductRecentDTO getRecentProduct(int oid) {
+        log.info("getting recent product");
+        return mapper.readRecentProduct(oid);
     }
 
     @Override

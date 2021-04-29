@@ -8,63 +8,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yekwang</title>
-    <link rel="stylesheet" href="/resources/css/myPage.css?version=1">
-    <link rel="stylesheet" href="/resources/css/main.css?version=1">
     <script src="/resources/js/jquery.min.js"></script>
-
+    <link rel="stylesheet" href="/resources/css/myPage.css?version=7">
+    <link rel="stylesheet" href="/resources/css/main.css?version=7">
     <script>
-        $(function(){
-            var slider = $(".slider");
-            firstSlide = slider.find(".slide-img").first()
-                .animate({'opacity':1},200);
+        $(function() {
+            var count = 0;
+            var max = ${recentBookList.size()} / 3;
+            max = Math.ceil(max);
 
-            function nextSlide() {
-                slider.find(".slide-img").first().appendTo(slider);
-                slider.find(".slide-img").last().animate({'opacity':0}, 400);
-                slider.find(".slide-img").first().animate({'opacity':1}, 400);
+            if(max == 0){ //최근본 책이 없다면
+                $(".right-nav").css("display","none");
             }
+            $("#recent-max").text(max);
+            $("#recent-rec").text(1);
 
-            function prevSlide() {
-                slider.find(".slide-img").last().prependTo(slider);
-                slider.find(".slide-img").eq(1).animate({'opacity':0}, 400);
-                slider.find(".slide-img").first().animate({'opacity':1}, 400);
-            }
+            $(".right-content").css("display","none");
+            $(".right-content").eq("0").css("display","block");
+            $(".right-content").eq("1").css("display","block");
+            $(".right-content").eq("2").css("display","block");
 
-            var interval;
-            function startSlide(){
-                interval = setInterval(nextSlide,3000);
-            }
-            function stopSlide(){
-                clearInterval(interval);
-            }
-            $(".content-aside-center").hover(function(){
-                $(".arrow").first().animate({"opacity":1},100);
-                $(".arrow").eq(1).animate({"opacity":1},100);
-                stopSlide();
-            }, function(){
-                $(".arrow").first().animate({"opacity":0},100);
-                $(".arrow").eq(1).animate({"opacity":0},100);
-                $(".arrow").attr("opacity", 0);
-                startSlide();
-            });
+            $(".recent-left").on("click",function(){
+                if(count == 0) return;
+                $(".right-content").css("display","none");
+                count -= 1;
+                $(".right-content").eq(3 * count + 0).css("display","block");
+                $(".right-content").eq(3 * count + 1).css("display","block");
+                $(".right-content").eq(3 * count + 2).css("display","block");
 
-
-            startSlide();
-
-            $(".right").on("click",function(){
-                nextSlide();
+                $("#recent-rec").text(count + 1);
             })
-            $(".left").on("click",function(){
-                prevSlide();
+            $(".recent-right").on("click",function(){
+                if(count >=(max - 1)) return;
+                $(".right-content").css("display","none");
+                count += 1;
+                $(".right-content").eq(3 * count + 0).css("display","block");
+                $(".right-content").eq(3 * count + 1).css("display","block");
+                $(".right-content").eq(3 * count + 2).css("display","block");
+
+                $("#recent-rec").text(count + 1);
             })
-
-        });
-
+        })
     </script>
+    <script src="/resources/js/right_bar_control.js"></script>
 </head>
 <body>
 <div class="page-wrapper">
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="/resources/jsp/header.jsp"/>
     <div class="content">
         <section class="content-aside-left">
             <img src="/resources/img/adBanner/ad1.png" alt="" class="left-banner">
@@ -82,17 +72,17 @@
             <div class="right-title">
                 최근 본 도서
             </div>
-            <div class="right-content">
-                1번도서
-            </div>
-            <div class="right-content">
-                2번도서
-            </div>
+            <c:forEach items="${recentBookList}" var="book">
+                <div class="right-content">
+                    <a href="/product/view?oid=${book.oid}"><img src="${book.repUri}" alt=""></a>
+                </div>
+            </c:forEach>
             <div class="right-nav">
-                방향키
+                <i class="fas fa-angle-left recent-left"></i>
+                <t id="recent-rec"></t> / <t id="recent-max"></t>
+                <i class="fas fa-angle-right recent-right"></i>
             </div>
         </section>
-
         <section class="non-main">
             <div class="second-title">
                 신간 도서
@@ -115,8 +105,9 @@
         <section class="non-main">4층 컨텐츠</section>
     </div>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="/resources/jsp/footer.jsp"/>
 </div>
 
 </body>
+<script src="/resources/js/main-slider-control.js"></script>
 </html>
