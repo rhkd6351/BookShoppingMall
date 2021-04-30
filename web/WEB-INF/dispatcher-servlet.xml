@@ -31,6 +31,7 @@
             <mapping path="/user/*"/>
             <mapping path="/pub/*"/>
             <mapping path="/product/*"/>
+            <mapping path="/cart/*"/>
             <exclude-mapping path="/user/login"/>
             <exclude-mapping path="/product/view"/>
             <beans:ref bean="LoginInterceptureBean"/>

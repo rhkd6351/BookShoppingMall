@@ -19,4 +19,6 @@ public class CartViewDTO {
    //img
    private String repUri;
 
+   //author
+   private String authorName;
 }

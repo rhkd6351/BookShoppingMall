@@ -80,14 +80,17 @@
                         <td>택배비</td>
                         <td>${product.deliveryFee}원</td>
                     </tr>
+                    <form action="/cart/post" method="get">
                     <tr>
                         <td>개수</td>
-                        <td><input type="number" value="1" style="width: 40px;"/></td>
+                        <td><input type="number" value="1" style="width: 40px;" name="quantity"/></td>
                     </tr>
                 </table>
+                <input type="hidden" value="${product.oid}" name="productOid">
                 <div class="right-item item-button">
                     <button class="right-item-button cart floating">장바구니</button>
-                    <button class="right-item-button buy floating">바로 구매</button>
+                    <button class="right-item-button buy floating" type="button">바로 구매</button>
+                    </form>
                 </div>
             </div>
         </section>

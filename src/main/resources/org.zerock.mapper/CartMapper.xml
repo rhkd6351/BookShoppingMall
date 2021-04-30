@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.CartMapper">
+
+    <insert id="insert">
+        insert into cart_tb (oid, quantity, reg_date, product_oid, user_email)
+        values(cart_seq.nextval, #{quantity}, sysdate, #{productOid}, #{userEmail})
+    </insert>
+
+    <select id="readByUserEmail" resultType="org.zerock.dto.CartViewDTO">
+        select a.oid, a.quantity, b.oid as product_oid, b.title as product_title, b.price,
+               c.name as pub_name, d.path as rep_uri, e.name as author_name
+        from cart_tb a,
+             product_tb b,
+             pub_tb c,
+             image_product_tb d,
+             author_tb e
+        where (a.user_email = #{userEmail}) and (a.product_oid = b.oid) and (b.pub_oid = c.oid) and
+            (b.oid = d.product_oid) and (d.image_list_oid = 2) and (b.author_oid = e.oid)
+    </select>
+
+    <delete id="delete">
+        delete from cart_tb where user_email = #{userEmail} and oid=#{cartOid}
+    </delete>
+
+
+</mapper>

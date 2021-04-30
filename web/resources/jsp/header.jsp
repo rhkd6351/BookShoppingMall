@@ -21,7 +21,7 @@
             <ul class="nav-aside-right">
                 <li><a href="/user/logout" class="login-out">로그아웃</a></li> <!--로그아웃-->
                 <li><a href="/user/myPage">내정보</a></li> <!--마이페이지-->
-                <li>장바구니</li>
+                <li><a href="/cart/">장바구니</a></li>
                 <li>고객센터</li>
                 <li>제작자</li>
             </ul>
