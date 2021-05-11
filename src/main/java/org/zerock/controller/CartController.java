@@ -44,7 +44,7 @@ public class CartController {
         return "redirect:/cart/sendMessage";
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "")
     public String cartList(Model model){
         UserVO userVO = (UserVO)session.getAttribute("user");
         ArrayList<CartViewDTO> cartList = cartService.getByUserEmail(userVO.getEmail());
@@ -56,6 +56,18 @@ public class CartController {
     public String cartDelete(@Param("cartOid") int cartOid){
         UserVO userVO = (UserVO)session.getAttribute("user");
         cartService.delete(cartOid, userVO.getEmail());
-        return "redirect:/cart/";
+        return "redirect:/cart";
+    }
+
+    @ResponseBody
+    @GetMapping("/update")
+    public boolean updateQuantity(@RequestParam("quantity") int quantity, @RequestParam("cartOid") int cartOid){
+        try{
+            cartService.update(cartOid, quantity);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
     }
 }

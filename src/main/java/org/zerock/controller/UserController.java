@@ -45,7 +45,7 @@ public class UserController {
         return "/login";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login") //http://localhost:8080/user/login?email=ls&pw=hjh
     public String login(@RequestParam String email, @RequestParam String pw, RedirectAttributes rttr){
         log.info("second called");
         UserVO vo = userService.get(email);

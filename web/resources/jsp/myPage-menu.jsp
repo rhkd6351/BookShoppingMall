@@ -4,7 +4,7 @@
                     <ul>
                         <li><h3 style="">쇼핑 정보</h3></li>
                         <a href="/user/myPage"><li>회원정보</li></a>
-                        <li>주문현황</li>
+                        <a href="/cart"><li>주문현황</li></a>
                         <li>장바구니</li>
                         <li>쿠폰</li>
                         <li>포인트</li>

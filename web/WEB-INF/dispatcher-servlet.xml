@@ -32,7 +32,9 @@
             <mapping path="/pub/*"/>
             <mapping path="/product/*"/>
             <mapping path="/cart/*"/>
+            <mapping path="/order/*"/>
             <exclude-mapping path="/user/login"/>
+            <exclude-mapping path="/user/register"/>
             <exclude-mapping path="/product/view"/>
             <beans:ref bean="LoginInterceptureBean"/>
         </interceptor>

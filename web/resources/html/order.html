@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yekwang</title>
+    <link rel="stylesheet" href="../css/myPage.css">
+    <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <nav>
+                <ul class="nav-aside-left">
+                    <li>메인화면</li>
+                    <li>베스트북</li>
+                    <li>국내도서</li>
+                    <li>국외도서</li>
+                </ul>
+
+                <ul class="nav-aside-right">
+                    <li>로그인</li> <!--로그아웃-->
+                    <li>회원가입</li> <!--마이페이지-->
+                    <li>장바구니</li>
+                    <li>고객센터</li>
+                </ul>
+            </nav>
+
+            <div class="bookSearch">
+                <div class="bookSearch-aside-left">
+                    <img src="../img/logo_search.png" alt="" id="logo-image">
+                </div>
+                <div class="bookSearch-aside-center">
+                    <form action="#" id="search-form">
+                        <select name="" id="">
+                            <option value="">통합검색</option>
+                            <option value="">제목검색</option>
+                            <option value="">저자검색</option>
+                            <option value="">내용검색</option>
+                        </select>
+                        <input type="text">
+                        <input type="submit" name="" id="" value="검색">
+                    </form>
+                </div>
+                <div class="bookSearch-aside-right">
+                    <img src="../img/logo_event.jpeg" alt="" id="event-image">
+                </div>
+            </div>
+        </header>
+        <div class="nav2">
+            <ul>
+                <li>
+                    <i class="fas fa-bars"></i> 카테고리
+                </li>
+            </ul>
+        </div>
+        
+
+        <div class="content">
+            <section class="content-aside-center">
+                <div class="content-main">
+                    <div class="content-main-title">
+                        주문
+                    </div>
+                    <div class="content-main-content">
+                        <div class="content-main-content-floor">
+                            <div class="content-main-title">
+                                상품정보
+                            </div>
+                            <table class="cart-table">
+                                <thead class="cart-table-head">
+                                    <tr>
+                                        <th colspan="1">상품 정보</th>
+                                        <th>수량</th>
+                                        <th>금액</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cart-table-body">
+                                    <tr>
+                                        
+                                        <td class="cart-desc">
+                                            <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                            <div class="prod-title">점프 투 파이썬</div>
+                                            <div class="prod-desc">밍밍 / 박응용 저</div>
+                                        </td>
+                                        <td><input type="number" value="3"/>개</td>
+                                        <td>10,000원</td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="cart-desc">
+                                            <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                            <div class="prod-title">점프 투 파이썬</div>
+                                            <div class="prod-desc">밍밍 / 박응용 저</div>
+                                        </td>
+                                        <td><input type="number" value="3"/>개</td>
+                                        <td>10,000원</td>
+                                        
+                                    </tr><tr>
+                                        
+                                        <td class="cart-desc">
+                                            <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                            <div class="prod-title">점프 투 파이썬</div>
+                                            <div class="prod-desc">밍밍 / 박응용 저</div>
+                                        </td>
+                                        <td><input type="number" value="3"/>개</td>
+                                        <td>10,000원</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            총 가격 : 20,000원 (상품 17,500원 + 배송비 2,500원)
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content-main-content-floor">
+                            <div class="content-main-title">
+                                배송지
+                            </div>
+                            <div class="content-main-content">
+                                
+                                <table class="table address-table">
+                                    <tr style="text-align: left; height: 50px;">
+                                        <td>기본 배송지 <input type="radio" name="address" id="" disabled/></td>
+                                        <td style="padding-left: 30px;">신규 배송지 <input type="radio" name="address" id=""
+                                            checked/></td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td><button>검색</button></td>
+                                        <td><input type="text" readonly></td>        
+                                    </tr>
+                                    <tr>
+                                        <td>상세주소</td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-main-content-floor coupon-floor">
+                            <div class="content-main-title">
+                                쿠폰
+                            </div>
+                            <div class="content-main-content">
+                                <table class="table coupon-table">
+                                    <tr>
+                                        <td><button>선택</button></td>
+                                        <td><input type="text" readonly></td>     
+                                        <td>-3000</td>   
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-main-content-floor payment-floor">
+                            <div class="content-main-title">
+                                결제수단
+                            </div>
+                            <div class="content-main-content">
+                                <table class="table payment-table">
+                                    <tr style="text-align: left; height: 50px;">
+                                        <td>무통장 입금 <input type="radio" name="payment" id="" checked/></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>계좌번호는 주문 완료후 표시됩니다</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <section class="content-aside-right">
+                123
+            </section>
+            
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                    rhkd6351@kyonggi.ac.kr <br/> <br/>
+                    https://github.com/rhkd6351
+            </div>
+            
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yekwang</title>
+    <link rel="stylesheet" href="../css/myPage.css">
+    <link rel="stylesheet" href="../css/myPageCart.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <nav>
+                <ul class="nav-aside-left">
+                    <li>메인화면</li>
+                    <li>베스트북</li>
+                    <li>국내도서</li>
+                    <li>국외도서</li>
+                </ul>
+
+                <ul class="nav-aside-right">
+                    <li>로그인</li> <!--로그아웃-->
+                    <li>회원가입</li> <!--마이페이지-->
+                    <li>장바구니</li>
+                    <li>고객센터</li>
+                </ul>
+            </nav>
+
+            <div class="bookSearch">
+                <div class="bookSearch-aside-left">
+                    <img src="../img/logo_search.png" alt="" id="logo-image">
+                </div>
+                <div class="bookSearch-aside-center">
+                    <form action="#" id="search-form">
+                        <select name="" id="">
+                            <option value="">통합검색</option>
+                            <option value="">제목검색</option>
+                            <option value="">저자검색</option>
+                            <option value="">내용검색</option>
+                        </select>
+                        <input type="text">
+                        <input type="submit" name="" id="" value="검색">
+                    </form>
+                </div>
+                <div class="bookSearch-aside-right">
+                    <img src="../img/logo_event.jpeg" alt="" id="event-image">
+                </div>
+            </div>
+        </header>
+        <div class="nav2">
+            <ul>
+                <li>
+                    <i class="fas fa-bars"></i> 카테고리
+                </li>
+            </ul>
+        </div>
+        
+
+        <div class="content">
+            <section class="content-aside-center">
+                <div class="content-top">
+                    
+                    <div class="content-top-element">
+                        <img src="../img/user_image.png" alt=""
+                        id = "profile-image">
+                        
+                    </div>
+                    <div class="content-top-element">
+                        
+                        <div id="user-email">
+                            waspy@naver.com
+                        </div>
+                        <div id="user-regDate">
+                            Kakao 2020. 04. 18 가입
+                        </div>
+                    </div>
+                    <div class="content-top-element">
+                        등급
+                        <div id="user-grade">
+                            Silver
+                        </div>
+                    </div>
+                    <div class="content-top-element">
+                        포인트
+                        <div id="user-point">
+                            3000
+                        </div>
+                    </div>
+                    <div class="content-top-element">
+                        쿠폰
+                        <div id="user-coupon">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="content-menu">
+                    <div class="menu-floor">
+                        <ul>
+                            <li><h3 style="">쇼핑 정보</h3></li>
+                            <li>주문현황</li>
+                            <li>쿠폰</li>
+                            <li>포인트</li>
+                            <li>회원정보</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="menu-floor">
+                        <ul>
+                            <li><h3 style="">판매 관리</h3></li>
+                            <li>상품등록</li>
+                            <li>상품관리</li>
+                            <li>출판사관리</li>
+                            <li>출판사등록</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-main">
+                    <div class="content-main-title">
+                        장바구니
+                    </div>
+                    <div class="content-main-content">
+                        <table class="cart-table">
+                            <thead class="cart-table-head">
+                                <tr>
+                                    <th colspan="2">상품 정보</th>
+                                    <th>수량</th>
+                                    <th>금액</th>
+                                    <th>주문</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cart-table-body">
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td class="cart-desc">
+                                        <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                        <div class="prod-title">점프 투 파이썬</div>
+                                        <div class="prod-desc">밍밍 / 박응용 저</div>
+                                    </td>
+                                    <td><input type="number" value="3"/>개</td>
+                                    <td>10,000원</td>
+                                    <td>
+                                        <button class="book-order">주문하기</button><br/><br/>
+                                        <button class="book-order red" onclick="href='/cart/delete'">삭제하기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td class="cart-desc">
+                                        <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                        <div class="prod-title">점프 투 파이썬</div>
+                                        <div class="prod-desc">밍밍 / 박응용 저</div>
+                                    </td>
+                                    <td><input type="number" value="3"/>개</td>
+                                    <td>10,000원</td>
+                                    <td>
+                                        <button class="book-order">주문하기</button>
+                                    </td>
+                                </tr><tr>
+                                    <td><input type="checkbox"></td>
+                                    <td class="cart-desc">
+                                        <img class = "prod-image" src="../img/product/JSP 웹 프로그래밍_product_represent.jpeg" alt="">
+                                        <div class="prod-title">점프 투 파이썬</div>
+                                        <div class="prod-desc">밍밍 / 박응용 저</div>
+                                    </td>
+                                    <td><input type="number" value="3"/>개</td>
+                                    <td>10,000원</td>
+                                    <td>
+                                        <button class="book-order">주문하기</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        총 가격 : 20,000원 (상품 17,500원 + 배송비 2,500원)
+                                    </td>
+                                    <td>
+                                        <button class="book-order">선택주문</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </section>
+            
+        </div>
+
+        <footer>
+            <div class="footer-wrapper">
+                    rhkd6351@kyonggi.ac.kr <br/> <br/>
+                    https://github.com/rhkd6351
+            </div>
+            
+        </footer>
+    </div>
+
+</body>
+</html>

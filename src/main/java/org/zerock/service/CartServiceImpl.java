@@ -22,6 +22,12 @@ public class CartServiceImpl implements CartService{
         return mapper.readByUserEmail(userEmail);
     }
 
+    @Override
+    public CartViewDTO getByOid(int oid) {
+        log.info("getting cart ...");
+        return mapper.readByOid(oid);
+    }
+
     public void insert(CartVO vo){
         log.info("insert cart ...");
         mapper.insert(vo);
@@ -30,6 +36,12 @@ public class CartServiceImpl implements CartService{
     public void delete(int cartOid, String userEmail){
         log.info("deleting cart ...");
         mapper.delete(cartOid, userEmail);
+    }
+
+    @Override
+    public void update(int cartOid, int quantity) {
+        log.info("updating cart quantity");
+        mapper.update(cartOid, quantity);
     }
 
 }

@@ -1,7 +1,7 @@
 .content-main{
     float: left;
-    width: 822px;
-    margin: 10px 0 10px 10px;
+    width: 750px;
+    
     border: 2px solid #74534b;
     border-radius: 10px;
     box-shadow: 0px 0px 3px #74534b;
@@ -14,18 +14,18 @@
     font-size: 1.2em;
     font-weight: bold;
     border-bottom: 2px solid #74534b;
-    
+    border-top: 2px solid #74534b;
 }
-.myInfo-content{
-    width: 822px;
-    height: 75px;
-    border-bottom: 1px solid grey;
+
+.content-main-content-floor{
+    width: 750px;
+    min-height: 200px;
+    margin-bottom: 50px;
 }
 
 .cart-table{
-    width: 800px;
-    
-    margin: 30px auto 100px auto;
+    width: 700px;
+    margin: 5px auto 0 auto;
     text-align: center;
     border-radius: 0px;
     
@@ -36,13 +36,13 @@
     color: white;
     font-weight: 400;
 }
-td{
+.cart-table-body td{
     border-bottom: 1px solid rgb(202, 202, 202);
 }
 th:nth-child(1){
     border-radius: 20px 0 0 0;
 }
-th:nth-child(4){
+th:nth-child(3){
     border-radius: 0 20px 0 0;
 }
 .cart-desc{
@@ -76,11 +76,56 @@ input[type="number"]{
     width: 90px;
     height: 30px;
 }
-.red{
-    background-color: rgb(165, 26, 26);
-}
-tr:last-child{
+.cart-table-body tr:last-child{
     height: 50px;
+}
+.content > *{
+    float: left;
+}
+.content{
+    margin: 0 auto;
+    width: 960px;
+    margin-top: 5px;
+}
+.content-aside-center{
+    margin: 0 auto;
+    width: 756px;
+    min-height: 700px;
+    overflow: hidden;
+}
+.content-aside-right{
+    border-radius: 10px;
+    border: 2px solid #74534b;
+    position: relative;
+    float: left;
+    width: 200px;
+    min-height: 300px;
+    background-color: white;
+    text-align: center;
+}
+
+.table{
+    margin-left: 20px;
+    text-align: center;
+}
+.table input[type="text"]{
+    width: 400px;
+    height: 24px;
+}
+.table button{
+    width: 50px;
+    height: 24px;
+    background-color: white;
+    border: 1px solid grey;
+}
+.coupon-table{
+    margin: 20px;
+}
+.coupon-table td{
+    width: 90px;
+}
+.coupon-floor, .payment-floor{
+    min-height: 50px;
 }
 
 

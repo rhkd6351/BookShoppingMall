@@ -26,17 +26,17 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <jsp:include page="../header.jsp"/>
+        <jsp:include page="/resources/jsp/header.jsp"/>
         <div class="content">
             <section class="content-aside-center">
-                <jsp:include page="../myPage-top.jsp"/>
-                <jsp:include page="../myPage-menu.jsp"/>
+                <jsp:include page="/resources/jsp/myPage-top.jsp"/>
+                <jsp:include page="/resources/jsp/myPage-menu.jsp"/>
                 <div class="content-main">
                     <div class="content-main-title">
                         생년월일 변경
                     </div>
                     <div class="content-main-content"> 
-                        <form action="/user/birthChange" method="POST" name = "birthForm">
+                        <form action="/user/birthChane" method="POST" name = "birthForm">
                         생년월일
                         <input type="date" name = "birth">
                         <input type="button" value="변경" onclick="changeBirth()">
