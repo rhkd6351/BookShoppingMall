@@ -7,18 +7,18 @@
 
     <insert id="insert">
         <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
-            select author_seq.nextval from dual
+            select ifnull(MAX(oid) + 1,1) from AUTHOR_TB
         </selectKey>
-        insert into author_tb(oid, name, description)
-        values (#{oid}, #{name}, #{description})
+        insert into AUTHOR_TB(name, description)
+        values (#{name}, #{description})
     </insert>
 
     <select id="read" resultType="org.zerock.domain.AuthorVO">
-        select * from author_tb where oid = #{oid}
+        select * from AUTHOR_TB where oid = #{oid}
     </select>
 
     <select id="readAll" resultType="org.zerock.domain.AuthorVO">
-        select * from author_tb
+        select * from AUTHOR_TB
     </select>
 
 

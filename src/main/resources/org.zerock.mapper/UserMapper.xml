@@ -6,36 +6,36 @@
 <mapper namespace="org.zerock.mapper.UserMapper">
 
     <insert id="insert">
-        insert into user_tb(email, pw, gender, birth, phone, platform, reg_date, type)
-        values (#{email}, #{pw}, #{gender}, #{birth}, #{phone}, 'local', sysdate, 1)
+        insert into USER_TB(email, pw, gender, birth, phone, platform, reg_date, type)
+        values (#{email}, #{pw}, #{gender}, #{birth}, #{phone}, 'local', NOW(), 1)
     </insert>
 
     <insert id="kakaoInsert">
-        insert into user_tb(email, gender, birth, platform, reg_date, type)
-        values (#{email}, #{gender}, #{birth}, 'kakao', sysdate, 1)
+        insert into USER_TB(email, gender, birth, platform, reg_date, type)
+        values (#{email}, #{gender}, #{birth}, 'kakao', NOW(), 1)
     </insert>
 
     <select id="read" resultType="org.zerock.domain.UserVO">
-        select * from user_tb where email = #{email}
+        select * from USER_TB where email = #{email}
     </select>
 
     <update id="updatePw">
-        update user_tb
+        update USER_TB
         set pw = #{pw}
         where email = #{email}
     </update>
     <update id="updatePhone">
-        update user_tb
+        update USER_TB
         set phone = #{phone}
         where email = #{email}
     </update>
     <update id="updateGender">
-        update user_tb
+        update USER_TB
         set gender = #{gender}
         where email = #{email}
     </update>
     <update id="updateBirth">
-        update user_tb
+        update USER_TB
         set birth = #{birth}
         where email = #{email}
     </update>

@@ -99,6 +99,7 @@ public class ProductController {
         model.addAttribute("pub",pubService.get(userVo.getEmail())); //pub정보 전송
         model.addAttribute("author",authorService.getAll()); //author 정보 전송
         model.addAttribute("category",categoryService.getAll()); //category 정보 전송
+        log.info(categoryService.getAll());
 
         return "/product_manage/product_register";
     }
@@ -140,6 +141,11 @@ public class ProductController {
     public String productManage(Model model){
         UserVO userVO = (UserVO) session.getAttribute("user");
         PubVO pubVO = pubService.get(userVO.getEmail());
+
+        if(pubVO== null){ //출판사 등록여부 확인
+            model.addAttribute("message", "출판사 등록 후 상품관리가 가능합니다.");
+            return "redirect:/product/sendMessage";
+        }
 
         model.addAttribute("pub", pubVO);
         model.addAttribute("products", productService.getAccordingToPubOid(pubVO.getOid()));

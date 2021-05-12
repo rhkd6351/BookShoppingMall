@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="myInfo-content-content">
                                     <select name="category" id="category">
-                                        <option value="" selected>--------- 선택 ---------</option>>
+                                        <option value="" selected>--------- 선택 ---------</option>
                                         <c:forEach items="${category}" var="category">
                                         <option value="<c:out value="${category.oid}"/>"><c:out value="${category.name}"/></option>
                                         </c:forEach>

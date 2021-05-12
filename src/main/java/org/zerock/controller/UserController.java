@@ -11,14 +11,12 @@ import org.zerock.domain.UserVO;
 import org.zerock.service.KakaoService;
 import org.zerock.service.TokenService;
 import org.zerock.service.UserService;
-import sun.misc.Request;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 @AllArgsConstructor

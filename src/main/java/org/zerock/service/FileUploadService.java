@@ -10,9 +10,9 @@ import java.io.File;
 
 @Service
 public class FileUploadService {
-    static String pubFolder = "/Users/im-yegwang/IdeaProjects/BookShoppingMall/web/resources/img/pub";
-    static String productFolder = "/Users/im-yegwang/IdeaProjects/BookShoppingMall/web/resources/img/product";
-    static String userFolder = "/Users/im-yegwang/IdeaProjects/BookShoppingMall/web/resources/img/user";
+    static String pubFolder = "/Users/lim/IdeaProjects/BookShoppingMall/web/resources/img/pub";
+    static String productFolder = "/Users/lim/IdeaProjects/BookShoppingMall/web/resources/img/product";
+    static String userFolder = "/Users/lim/IdeaProjects/BookShoppingMall/web/resources/img/user";
 
 //    static String pubTempFolder = "/Users/im-yegwang/IdeaProjects/BookShoppingMall/target/controller-1.0.0-BUILD-SNAPSHOPT/resources/img/pub";
 //    static String productTempFolder = "/Users/im-yegwang/IdeaProjects/BookShoppingMall/target/controller-1.0.0-BUILD-SNAPSHOPT/resources/img/product";

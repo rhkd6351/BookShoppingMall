@@ -7,20 +7,20 @@
 
     <insert id="insert">
         <selectKey keyProperty="oid" order="BEFORE" resultType="Integer">
-            select cart_seq.nextval from dual
+            select ifnull(MAX(oid) + 1,1) from CART_TB
         </selectKey>
-        insert into cart_tb (oid, quantity, reg_date, product_oid, user_email)
-        values(#{oid}, #{quantity}, sysdate, #{productOid}, #{userEmail})
+        insert into CART_TB (oid, quantity, reg_date, product_oid, user_email)
+        values(#{oid}, #{quantity}, NOW(), #{productOid}, #{userEmail})
     </insert>
 
     <select id="readByUserEmail" resultType="org.zerock.dto.CartViewDTO">
         select a.oid, a.quantity, b.oid as product_oid, b.title as product_title, b.price,
                c.name as pub_name, d.path as rep_uri, e.name as author_name
-        from cart_tb a,
-             product_tb b,
-             pub_tb c,
-             image_product_tb d,
-             author_tb e
+        from CART_TB a,
+             PRODUCT_TB b,
+             PUB_TB c,
+             IMAGE_PRODUCT_TB d,
+             AUTHOR_TB e
         where (a.user_email = #{userEmail}) and (a.product_oid = b.oid) and (b.pub_oid = c.oid) and
             (b.oid = d.product_oid) and (d.image_list_oid = 2) and (b.author_oid = e.oid)
     </select>
@@ -28,21 +28,21 @@
     <select id="readByOid" resultType="org.zerock.dto.CartViewDTO">
         select a.oid, a.quantity, b.oid as product_oid, b.title as product_title, b.price,
                c.name as pub_name, d.path as rep_uri, e.name as author_name
-        from cart_tb a,
-             product_tb b,
-             pub_tb c,
-             image_product_tb d,
-             author_tb e
+        from CART_TB a,
+             PRODUCT_TB b,
+             PUB_TB c,
+             IMAGE_PRODUCT_TB d,
+             AUTHOR_TB e
         where (a.oid = #{oid}) and (a.product_oid = b.oid) and (b.pub_oid = c.oid) and
             (b.oid = d.product_oid) and (d.image_list_oid = 2) and (b.author_oid = e.oid)
     </select>
 
     <delete id="delete">
-        delete from cart_tb where user_email = #{userEmail} and oid=#{cartOid}
+        delete from CART_TB where user_email = #{userEmail} and oid=#{cartOid}
     </delete>
 
     <update id="update">
-        update cart_tb
+        update CART_TB
         set quantity = #{quantity}
         where oid = #{cartOid}
     </update>

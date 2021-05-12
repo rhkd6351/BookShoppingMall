@@ -11,10 +11,10 @@
     <!-- Root Context: defines shared resources visible to all other web components -->
 
     <bean id ="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
-        <property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:49161:XE"></property>
-        <property name="username" value="BookShoppingMall"></property>
-        <property name="password" value="saej1028"></property>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/book?serverTimezone=UTC"></property>
+        <property name="username" value="book"></property>
+        <property name="password" value="book"></property>
     </bean>
 
     <!-- HikariCP configuration -->

@@ -6,7 +6,7 @@
 <mapper namespace="org.zerock.mapper.CategoryMapper">
 
     <select id="readAll" resultType="org.zerock.domain.CategoryVO">
-        select * from category_tb
+        select * from CATEGORY_TB
     </select>
 
 

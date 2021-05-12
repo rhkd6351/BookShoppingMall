@@ -6,17 +6,17 @@
 <mapper namespace="org.zerock.mapper.ImageMapper">
 
     <insert id="insertPubImage">
-        insert into image_pub_tb(oid, name, path, type, file_size, image_list_oid, pub_oid)
-        values (image_seq.nextval, #{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{pubOid})
+        insert into IMAGE_PUB_TB(name, path, type, file_size, image_list_oid, pub_oid)
+        values (#{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{pubOid})
     </insert>
 
     <insert id="insertProductImage">
-        insert into image_product_tb(oid, name, path, type, file_size, image_list_oid, product_oid)
-        values (image_seq.nextval, #{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{productOid})
+        insert into IMAGE_PRODUCT_TB(name, path, type, file_size, image_list_oid, product_oid)
+        values (#{name}, #{path}, #{type}, #{fileSize}, #{imageListOid}, #{productOid})
     </insert>
 
     <select id="readPubImage" resultType="org.zerock.domain.ImagePubVO">
-        select * from image_pub_tb where pub_oid = #{pubOid}
+        select * from IMAGE_PUB_TB where pub_oid = #{pubOid}
     </select>
 
 </mapper>

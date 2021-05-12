@@ -7,26 +7,26 @@
 
     <insert id="insert">
         <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
-            select pub_seq.nextval from dual
+            select ifnull(MAX(oid) + 1,1) from PUB_TB
         </selectKey>
-        insert into pub_tb(oid, name, description, user_email)
+        insert into PUB_TB(oid, name, description, user_email)
         values (#{oid}, #{name}, #{description}, #{userEmail})
     </insert>
 
     <select id="read" resultType="org.zerock.domain.PubVO">
-        select * from pub_tb where oid = #{oid}
+        select * from PUB_TB where oid = #{oid}
     </select>
 
     <select id="readAccordingToUserEmail" resultType="org.zerock.domain.PubVO">
-        select * from pub_tb where user_email = #{userEmail}
+        select * from PUB_TB where user_email = #{userEmail}
     </select>
 
     <delete id="delete">
-        delete from pub_tb where user_email = #{userEmail}
+        delete from PUB_TB where user_email = #{userEmail}
     </delete>
 
     <update id="update">
-        update pub_tb
+        update PUB_TB
         set name = #{name},
             description = #{description},
             user_email = #{userEmail}

@@ -7,24 +7,24 @@
 
     <insert id="insert">
         <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
-            select product_seq.nextval from dual
+            select ifnull(MAX(oid) + 1,1) from PRODUCT_TB
         </selectKey>
-        insert into product_tb(oid, title, description, price, delivery_fee, reg_date, pub_oid, category_oid,
+        insert into PRODUCT_TB(oid, title, description, price, delivery_fee, reg_date, pub_oid, category_oid,
         sub_title, contents, author_oid)
-        values (#{oid}, #{title}, #{description}, #{price}, #{deliveryFee}, sysdate, #{pubOid}, #{categoryOid},
+        values (#{oid}, #{title}, #{description}, #{price}, #{deliveryFee}, NOW(), #{pubOid}, #{categoryOid},
         #{subTitle}, #{contents}, #{authorOid})
     </insert>
 
     <select id="readAccordingToPubOid" resultType="org.zerock.domain.ProductVO">
-        select * from product_tb where pub_oid = #{pubOid}
+        select * from PRODUCT_TB where pub_oid = #{pubOid}
     </select>
 
     <select id="read" resultType="org.zerock.domain.ProductVO">
-        select * from product_tb where oid = #{oid}
+        select * from PRODUCT_TB where oid = #{oid}
     </select>
 
     <update id="update">
-        update product_tb
+        update PRODUCT_TB
         set title = #{title},
             description = #{description},
             price = #{price},
@@ -41,27 +41,27 @@
         select *
         from (
                  select a.oid, a.title, a.price, b.path as rep_uri, c.path as desc_uri, d.name as author_name
-                 from product_tb a,
-                      image_product_tb b,
-                      image_product_tb c,
-                      author_tb d
+                 from PRODUCT_TB a,
+                      IMAGE_PRODUCT_TB b,
+                      IMAGE_PRODUCT_TB c,
+                      AUTHOR_TB d
                  where (a.oid = b.product_oid AND b.image_list_oid = 2)
                    and (a.oid = c.product_oid AND c.image_list_oid = 3)
                    and (a.author_oid = d.oid)
                  order by a.reg_date desc
-             )
-        where rownum &lt;= #{num}
+             )NEWBOOK_TB
+        LIMIT #{num}
     </select>
 
     <select id="readSpecProduct" resultType="org.zerock.dto.ProductViewDTO">
         select a.oid, a.title, a.sub_title, a.price, a.delivery_fee, a.description, a.contents, b.name as author_name, b.description as author_desc ,
                c.name as pub_name, d.path as rep_uri, e.path as desc_uri, f.name as category_name
-        from product_tb a,
-             author_tb b,
-             pub_tb c,
-             image_product_tb d,
-             image_product_tb e,
-             category_tb f
+        from PRODUCT_TB a,
+             AUTHOR_TB b,
+             PUB_TB c,
+             IMAGE_PRODUCT_TB d,
+             IMAGE_PRODUCT_TB e,
+             CATEGORY_TB f
         where (a.oid = #{oid}) and (a.author_oid = b.oid) and (a.pub_oid = c.oid)
           and (a.oid = d.product_oid AND d.image_list_oid = 2)
           and (a.oid = e.product_oid AND e.image_list_oid = 3)
@@ -70,8 +70,8 @@
 
     <select id="readRecentProduct" resultType="org.zerock.dto.ProductRecentDTO">
         select a.oid, b.path as repUri
-        from product_tb a,
-             image_product_tb b
+        from PRODUCT_TB a,
+             IMAGE_PRODUCT_TB b
         where a.oid = b.product_oid and b.image_list_oid = 2 and a.oid = #{oid}
     </select>
 

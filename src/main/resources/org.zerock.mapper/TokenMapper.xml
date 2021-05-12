@@ -6,20 +6,20 @@
 <mapper namespace="org.zerock.mapper.TokenMapper">
 
     <insert id="insert">
-        insert into token_tb(oid, refresh_token, refresh_duration, reg_date)
-        values (token_seq.nextval, #{refreshToken}, #{refreshDuration}, sysdate)
+        insert into TOKEN_TB(refresh_token, refresh_duration, reg_date)
+        values (#{refreshToken}, #{refreshDuration}, NOW())
     </insert>
 
     <insert id="insertSelectKey">
         <selectKey keyProperty="oid" order="BEFORE" resultType= "Integer">
-            select token_seq.nextval from dual
+            select ifnull(MAX(oid) + 1,1) from TOKEN_TB
         </selectKey>
-        insert into token_tb(oid, refresh_token, refresh_duration, reg_date)
-        values (#{oid}, #{refreshToken}, #{refreshDuration}, sysdate)
+        insert into TOKEN_TB(oid, refresh_token, refresh_duration, reg_date)
+        values (#{oid}, #{refreshToken}, #{refreshDuration}, NOW())
     </insert>
 
     <select id="read" resultType="org.zerock.domain.TokenVO">
-        select * from token_tb where oid = #{oid}
+        select * from TOKEN_TB where oid = #{oid}
     </select>
 
 </mapper>
